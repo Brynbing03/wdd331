@@ -2,8 +2,7 @@
 
 **Student:** Brynlee Bingham  
 **Semester:** Fall 2026  
-**Live Site:** [View Site](YOUR-LIVE-SITE-URL)
-
+**Live Site:** [View Site](https://brynbing03.github.io/wdd331/)
 ## About
 
 This repository is my portfolio for WDD 331R: Advanced CSS.
