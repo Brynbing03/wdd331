@@ -10,6 +10,9 @@ Each week I add new pages and styles as I work through the course
 assignments. The site deploys automatically to GitHub Pages on
 every push to main.
 
-## Pages
 
+
+## Pages
+<!-- dont forget to add the pages here! probs every week  -->
 - [Home](index.html)
+- [Custom Properties and Nesting](unit-1/custom-properties/index.html)

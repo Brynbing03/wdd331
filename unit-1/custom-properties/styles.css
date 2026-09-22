@@ -1,0 +1,161 @@
+:root {
+/* my colors! */
+--color-primary: #6b5b95;
+--color-background: #f8f6fc;
+--color-surface: #ffffff;
+--color-text: #332f3d;
+--color-muted: #756f80;
+--color-accent: #f3df8c;
+
+    /* Spacing */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+
+    /* Typography */
+    --font-family: Arial, Helvetica, sans-serif;
+    --font-size-base: 1rem;
+
+    /* Borders */
+    --radius: 10px;
+}
+
+/* resets from assignment */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* the base styling */
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+    /* the clamp makes it so it cant get smaller that 1rem and bigger than 2rem */
+    padding: clamp(1rem, 3vw, 2rem);
+    /* vw (view width) and vh (view height) is taking the hight and the width of the screen */
+
+
+
+a {
+    color: var(--color-primary);
+    font-weight: bold;
+
+    &:hover {
+        color: var(--color-muted);
+    }
+}
+}
+
+/* for navigation */
+.site-nav {
+    padding: var(--space-sm);
+    margin-bottom: var(--space-lg);
+}
+
+/* this is for board header */
+.board-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    padding: var(--space-lg);
+
+    h1 {
+        /* this is dope! changes size of title depending on the size of the screen!  */
+        /* bounding the size of the font and text  */
+        /* width matters more... how long can i go before wrapping to a new line */
+        
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: var(--color-primary);
+    }
+
+    p {
+        color: var(--color-muted);
+        margin-top: var(--space-sm);
+    }
+}
+
+/* card group styling */
+.card-group {
+    margin-bottom: var(--space-lg);
+
+    h2 {
+        color: var(--color-primary);
+        margin-bottom: var(--space-md);
+        border-bottom: 3px solid var(--color-accent);
+        padding-bottom: var(--space-sm);
+    }
+}
+
+/* cards grid styling */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* it calculates on the fly */
+    /* this makes it so we dont have to wait for js to read it and then change sizes */
+    /* you can use var to access the 'variable'(token/property) function */
+    gap: calc(var(--space-md) * 2);
+}
+
+/* gotta style those individual cards :) */
+.card {
+    background-color: var(--color-surface, #ffffff);
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .card-tag {
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: var(--space-sm) var(--space-md);
+        background-color: var(--color-accent);
+        color: var(--color-text);
+        border-radius: var(--radius);
+        margin-bottom: var(--space-md);
+    }
+
+    h3 {
+        color: var(--color-primary);
+        margin-bottom: var(--space-sm);
+    }
+
+    p {
+        color: var(--color-text);
+        margin-bottom: var(--space-md);
+    }
+
+    .card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--space-sm);
+
+        span {
+            color: var(--color-muted);
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: var(--color-primary);
+            font-size: 0.9rem;
+
+            &:hover {
+                color: var(--color-muted);
+            }
+        }
+    }
+}
+
+/* footer thingz */
+.board-footer {
+    text-align: center;
+    padding: var(--space-lg);
+    margin-top: var(--space-lg);
+    color: var(--color-muted);
+    border-top: 2px solid var(--color-accent);
+}
