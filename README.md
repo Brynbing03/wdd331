@@ -14,5 +14,6 @@ every push to main.
 
 ## Pages
 <!-- dont forget to add the pages here! probs every week  -->
-- [Home](index.html)
-- [Custom Properties and Nesting](unit-1/custom-properties/index.html)
+- [Portfolio Home](https://brynbing03.github.io/wdd331/)
+- [Unit 1 - Custom Properties](https://brynbing03.github.io/wdd331/unit-1/custom-properties/index.html)
+- [Unit 2 - Layered Components](https://brynbing03.github.io/wdd331/unit-2/layered-components/index.html)

@@ -1,0 +1,52 @@
+/* Base element styles: body, headings, links, lists.
+   No classes here, only bare HTML element selectors.
+   Reference tokens with var(). */
+
+/* TODO: Style body, headings, links, and other base elements */
+
+body {
+   font-family: var(--font-family);
+   color: var(--color-text);
+   background-color: var(--color-background);
+   line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+   line-height: 1.2;
+   color: var(--color-text);
+}
+
+h1 {
+   font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+   font-size: 1.6rem;
+}
+
+h3 {
+   font-size: 1.2rem;
+}
+
+/* native CSS nesting lets go! */
+a {
+   color: var(--color-primary);
+   text-decoration-thickness: 2px;
+   text-underline-offset: 3px;
+
+   &:hover {
+       color: var(--color-accent);
+   }
+
+   &:focus-visible {
+       outline: var(--focus-width) solid var(--color-accent);
+       outline-offset: 3px;
+       border-radius: var(--radius);
+   }
+}
+
+ul {
+   list-style: none;
+}
