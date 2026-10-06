@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo-Elements Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main>
+        <h1>CSS Pseudo-Elements Demo</h1>
+
+        <section>
+            <h2>::marker</h2>
+
+            <p>
+                The ::marker pseudo-element lets us style
+                bullets and numbers in lists.
+            </p>
+
+            <h3>Favorite Foods</h3>
+
+            <ul>
+                <li>Pizza</li>
+                <li>Tacos</li>
+                <li>Ice Cream</li>
+            </ul>
+
+            <h3>My Morning</h3>
+
+            <ol>
+                <li>Wake up</li>
+                <li>Get ready</li>
+                <li>Go to class</li>
+            </ol>
+        </section>
+
+
+        <section>
+            <h2>::backdrop</h2>
+
+            <p>
+                Click the button to see a styled backdrop
+                behind a modal dialog.
+            </p>
+
+            <button id="openDialog">Open Dialog</button>
+
+            <dialog id="demoDialog">
+                <h2>Hello!</h2>
+
+                <p>
+                    The area behind this dialog is the
+                    ::backdrop pseudo-element.
+                </p>
+
+                <button id="closeDialog">Close</button>
+            </dialog>
+        </section>
+
+
+        <section>
+            <h2>::selection</h2>
+
+            <p>
+                Click and drag over this text to see our
+                custom selection colors.
+            </p>
+
+            <blockquote>
+                Try selecting this text too! This section
+                has its own selection color.
+            </blockquote>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

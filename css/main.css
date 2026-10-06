@@ -1,34 +1,45 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* gotta get it all in here!  */
 
-:root {
-    --color-bg: #f4f6f8;
-    --color-text: #1e293b;
-    --color-primary: #006eb6;
-    --color-primary-hover: #004f7f;
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 2rem;
-    --font-body: system-ui, -apple-system, sans-serif;
-}
+@layer tokens, base, layout, components, utilities;
 
-body {
-    font-family: var(--font-body);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    line-height: 1.6;
-    padding: var(--space-lg);
-}
+@import url("./tokens/colors.css") layer(tokens);
+@import url("./tokens/variables.css") layer(tokens);
 
-a {
-    color: var(--color-primary);
-}
+@import url("./base/reset.css") layer(base);
+@import url("./base/elements.css") layer(base);
 
-a:hover {
-    color: var(--color-primary-hover);
-}
+@import url("./layout/layout.css") layer(layout);
+
+@import url("./components/cards.css") layer(components);
+
+@import url("./utilities/utilities.css") layer(utilities);
+
+
+/* EXTRA HELP TO KNOW WHERE THINGS GO!!! :) */
+/* colors.css
+    ↓
+colors
+
+variables.css
+    ↓
+spacing, fonts, radius, shadows
+
+reset.css
+    ↓
+browser reset
+
+elements.css
+    ↓
+body, headings, links
+
+layout.css
+    ↓
+page/grid structure
+
+cards.css
+    ↓
+your card component
+
+utilities.css
+    ↓
+small reusable helpers */

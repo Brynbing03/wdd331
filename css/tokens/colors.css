@@ -1,0 +1,15 @@
+/* all my color design tokens */
+:root {
+    --color-bg: #f7f5ef;
+    --color-surface: #ffffff;
+
+    --color-text: #3f4a3c;
+    --color-text-light: #6d7868;
+
+    --color-primary: #7d9b76;
+    --color-primary-dark: #536b4f;
+    --color-primary-light: #dce7d8;
+
+    --color-accent: #eaded2;
+    --color-white: #ffffff;
+}

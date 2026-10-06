@@ -1,0 +1,23 @@
+{
+  "name": "wdd-331",
+  "version": "1.0.0",
+  "description": "**Student:** Brynlee Bingham   **Semester:** Fall 2026   **Live Site:** [View Site](https://brynbing03.github.io/wdd331/) ## About",
+  "main": "index.js",
+  "scripts": {
+  "build": "lightningcss --bundle --minify css/main.css -o dist/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brynbing03/wdd331.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brynbing03/wdd331/issues"
+  },
+  "homepage": "https://github.com/Brynbing03/wdd331#readme",
+  "devDependencies": {
+    "lightningcss-cli": "^1.33.0"
+  }
+}

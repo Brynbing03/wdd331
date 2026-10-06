@@ -1,0 +1,25 @@
+/* this is the responsive layout so on phones it will be 1 column and bigger screens it will be 2 :) */
+/* both moblie and desktop */
+.page-container {
+    width: min(100% - 2rem, 1000px);
+    margin-inline: auto;
+    padding-block: var(--space-xl);
+}
+
+.assignment-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+.intro {
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+}
+
+@media (min-width: 700px) {
+    .assignment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
