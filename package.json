@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "**Student:** Brynlee Bingham   **Semester:** Fall 2026   **Live Site:** [View Site](https://brynbing03.github.io/wdd331/) ## About",
   "main": "index.js",
-  "scripts": {
+  
+"scripts": {
   "build": "lightningcss --bundle --minify css/main.css -o dist/styles.css"
-  },
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Brynbing03/wdd331.git"

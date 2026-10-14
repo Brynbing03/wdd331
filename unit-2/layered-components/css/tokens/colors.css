@@ -1,25 +1,27 @@
 /* Color tokens: define all color values for the site.
    Name by purpose (--color-primary, --color-surface)
    not appearance (--blue, --light-gray). */
-:root {
+   :root {
     /* TODO: Define color tokens here */
     /* main colors */
-    --color-primary: #2d704b;
-    --color-background: #fcf5f3;
-    --color-surface: #ffffff;
-    --color-text: #263b30;
-    --color-muted: #66756b;
-    --color-accent: #d7893d;
+    --color-background: var(--color-bg);
+    --color-muted: var(--color-text-muted);
 
     /* the extra component colors */
-    --color-primary-light: #e3f0e8;
-    --color-peach: #f2b7a4;
-    --color-orange: #d7893d;
-    --color-green: #4c9870;
-    --color-dark-green: #2d704b;
-    --color-border: #dddcd7;
+    --color-peach: light-dark(
+        var(--accent-200),
+        var(--color-surface)
+    );
+
+    --color-orange: var(--color-accent);
+    --color-green: var(--color-accent);
+    --color-dark-green: var(--color-primary-dark);
 
     /* status colors */
-    --color-success: #4c9870;
-    --color-construction: #d7893d;
+    --color-success: light-dark(
+        oklch(0.48 0.12 155),
+        oklch(0.75 0.12 155)
+    );
+
+    --color-construction: var(--color-accent);
 }

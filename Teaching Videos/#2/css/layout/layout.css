@@ -1,0 +1,33 @@
+.site-header {
+    background-color: var(--color-primary);
+    text-align: center;
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.site-header p {
+    color: var(--color-white);
+    margin-top: var(--space-sm);
+}
+
+.container {
+    width: min(100% - 2rem, 1000px);
+    margin-inline: auto;
+    padding-block: var(--space-xl);
+}
+
+.container > h2 {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+}
+
+@media (min-width: 700px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

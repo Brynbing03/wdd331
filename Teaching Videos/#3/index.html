@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color & Accessibility Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <span class="eyebrow">WDD 331R • Advanced CSS</span>
+    <h1>Color & Accessibility Lab</h1>
+    <p>Exploring how websites handle print colors and
+      high-contrast accessibility settings.</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Welcome to the color lab!</h2>
+      <p>
+        Colors can make websites beautiful, but they
+        should also work for people who print pages
+        or use high-contrast settings.
+      </p>
+    </section>
+
+    <section class="demo-section">
+      <h2>1. Print color adjustment</h2>
+      <p>
+        Compare these badges when printing.
+        The first uses the default economy behavior.
+        The second requests exact colors.
+      </p>
+
+      <div class="badge-container">
+        <div class="example-card">
+          <h3>Economy (default)</h3>
+          <span class="badge economy">Completed</span>
+          <p>The browser can remove this background.</p>
+        </div>
+
+        <div class="example-card">
+          <h3>Exact</h3>
+          <span class="badge exact">Completed</span>
+          <p>The browser is asked to preserve this color.</p>
+        </div>
+      </div>
+
+      <button id="printButton" type="button">
+        Print preview
+      </button>
+    </section>
+
+    <section class="demo-section">
+      <h2>2. Forced colors mode</h2>
+      <p>
+        Some users enable high-contrast settings.
+        Let's see what happens to our cards!
+      </p>
+
+      <div class="badge-container">
+        <article class="example-card shadow-only">
+          <h3>Shadow-only card</h3>
+          <p>
+            This card relies on a shadow for its edge.
+            The shadow disappears in forced colors mode.
+          </p>
+        </article>
+
+        <article class="example-card accessible-card">
+          <h3>Accessible card</h3>
+          <p>
+            This card includes a border that can
+            remain visible in forced colors mode.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>3. Color swatches</h2>
+      <p>
+        Sometimes the actual color is important
+        information, so we need to preserve it.
+      </p>
+
+      <div class="swatches">
+        <div class="swatch sage">Sage</div>
+        <div class="swatch blush">Blush</div>
+        <div class="swatch lavender">Lavender</div>
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>4. Accessibility checklist</h2>
+      <ul class="checklist">
+        <li>Use readable text colors.</li>
+        <li>Don't rely only on shadows.</li>
+        <li>Test your website in print preview.</li>
+        <li>Support high-contrast settings.</li>
+        <li>Only preserve colors when necessary.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for WDD 331R • Print and Forced Colors</p>
+  </footer>
+</body>
+</html>

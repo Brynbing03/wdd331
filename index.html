@@ -1,25 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Brynlee Bingham | WDD 331R Portfolio</title>
-    <link rel="stylesheet" href="css/main.css">
+    <script src="js/theme-preference.js"></script>
+    <link rel="stylesheet" href="dist/styles.css">
+    
 </head>
 
 <body>
     <main class="page-container">
 
         <header class="hero text-center">
+
+            <!-- light and dark mode toggle -->
+            <div class="theme-switch">
+
+                <!-- sun icon :) -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+                </svg>
+
+                <!-- the sliding toggle -->
+                <label class="switch">
+                    <input
+                        type="checkbox"
+                        id="theme-toggle"
+                        aria-label="Turn on dark mode"
+                    >
+                    <span class="slider"></span>
+                </label>
+
+                <!-- moon icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path>
+                </svg>
+
+            </div>
+
+            <!-- reset theme back to system default -->
+            <button type="button" id="theme-system" class="theme-system" hidden>
+                Use system theme
+            </button>
+
             <div class="decorative-circles">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-        
+
             <p class="eyebrow">My CSS Portfolio</p>
             <h1>Brynlee Bingham</h1>
             <p>WDD 331R Advanced CSS</p>
+
         </header>
 
         <section class="intro text-center">

@@ -19,16 +19,70 @@ main > section {
     margin-bottom: var(--space-xl, 3rem);
 }
 
+
 .page-header {
+    position: relative;
     max-width: 64rem;
     width: 100%;
     margin-inline: auto;
     padding: var(--space-lg, 2rem) var(--space-md, 1rem);
+    padding-top: 5rem;
 }
+
 
 .page-footer {
     max-width: 64rem;
     width: 100%;
     margin-inline: auto;
     padding: var(--space-lg, 2rem) var(--space-md, 1rem);
+}
+
+
+
+/* make the system theme button match the homepage */
+.page-header .theme-system {
+    position: absolute;
+    top: 4.5rem;
+    right: 1.5rem;
+    z-index: 10;
+
+    /* matching orange theme colors */
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+
+    /* cute rounded button */
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+
+    /* text styling */
+    font-family: var(--font-body, Arial, sans-serif);
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1.3;
+
+    /* smooth hover */
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+}
+
+/* hover effect */
+.page-header .theme-system:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    transform: translateY(-2px);
+}
+
+/* keyboard accessibility */
+.page-header .theme-system:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* hide when using system default */
+.page-header .theme-system[hidden] {
+    display: none;
 }

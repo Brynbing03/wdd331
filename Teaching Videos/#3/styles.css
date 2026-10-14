@@ -1,0 +1,184 @@
+
+:root {
+    --sage: #7d9d83;
+    --sage-dark: #385c43;
+    --cream: #faf8f2;
+    --blush: #eab5bf;
+    --lavender: #c5b6e8;
+    --text: #28382d;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .site-header {
+    background: var(--sage);
+    color: #fff;
+    padding: 55px 20px;
+    text-align: center;
+  }
+  
+  .site-header h1 {
+    font-size: 2.4rem;
+  }
+  
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+  }
+  
+  main {
+    max-width: 950px;
+    margin: auto;
+    padding: 30px 20px;
+  }
+  
+  .intro,
+  .demo-section {
+    margin-bottom: 30px;
+    padding: 28px;
+    background: white;
+    border-radius: 16px;
+  }
+  
+  h2 {
+    color: var(--sage-dark);
+  }
+  
+  .badge-container {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit, minmax(220px, 1fr)
+    );
+    gap: 20px;
+    margin: 25px 0;
+  }
+  
+  .example-card {
+    background: #f7f9f5;
+    padding: 25px;
+    border-radius: 12px;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: var(--sage-dark);
+    color: white;
+    font-weight: bold;
+  }
+  
+  button {
+    background: var(--sage-dark);
+    color: white;
+    border: 2px solid transparent;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  .shadow-only {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+  }
+  
+  .accessible-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+    border: none;
+  }
+  
+  .swatches {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .swatch {
+    width: 130px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  
+  .sage {
+    background: #7d9d83;
+    color: #14291a;
+  }
+  
+  .blush {
+    background: #eab5bf;
+    color: #44232a;
+  }
+  
+  .lavender {
+    background: #c5b6e8;
+    color: #30234c;
+  }
+  
+  .checklist {
+    padding-left: 25px;
+  }
+  
+  .checklist li {
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 25px;
+  }
+  
+  /* PRINT COLORS */
+  
+  @media print {
+    .exact {
+      print-color-adjust: exact;
+    }
+  
+    .swatch {
+      print-color-adjust: exact;
+    }
+  
+    button {
+      display: none;
+    }
+  
+    body {
+      background: white;
+    }
+  }
+  
+  /* FORCED COLORS */
+  
+  @media (forced-colors: active) {
+    .accessible-card {
+      border: 4px solid CanvasText;
+    }
+  
+    button {
+      border: 2px solid ButtonText;
+    }
+  
+    .swatch {
+      forced-color-adjust: none;
+    }
+  }
+  

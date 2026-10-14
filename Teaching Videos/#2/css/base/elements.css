@@ -1,0 +1,28 @@
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    color: var(--color-white);
+}
+
+h2 {
+    color: var(--color-primary-dark);
+}
+
+h3 {
+    color: var(--color-primary-dark);
+}
+
+p {
+    color: var(--color-text-light);
+}

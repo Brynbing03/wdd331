@@ -1,15 +1,138 @@
 /* all my color design tokens */
+
 :root {
-    --color-bg: #f7f5ef;
-    --color-surface: #ffffff;
+    color-scheme: light;
 
-    --color-text: #3f4a3c;
-    --color-text-light: #6d7868;
+    /* orange color seeds */
+    
+    --seed-bg: #fff9f3;
+    --seed-surface: #ffffff;
+    --seed-text: #3d302b;
+    --seed-text-muted: #76665d;
 
-    --color-primary: #7d9b76;
-    --color-primary-dark: #536b4f;
-    --color-primary-light: #dce7d8;
 
-    --color-accent: #eaded2;
+    --seed-accent: oklch(0.65 0.17 45);
+    --seed-accent-hover: color-mix(in oklch, var(--seed-accent) 80%, black);
+
+    --seed-link: var(--seed-accent);
+    --seed-link-hover: var(--seed-accent-hover);
+
+    --seed-border: #ead7c5;
+    --seed-border-strong: #d6b79e;
+
+    /* orange accent ramp */
+    --accent-200: color-mix(in oklch, var(--seed-accent) 30%, white);
+    --accent-300: color-mix(in oklch, var(--seed-accent) 50%, white);
+    --accent-400: color-mix(in oklch, var(--seed-accent) 75%, white);
+    --accent-500: var(--seed-accent);
+    --accent-600: color-mix(in oklch, var(--seed-accent) 80%, black);
+    --accent-700: color-mix(in oklch, var(--seed-accent) 60%, black);
+    --accent-800: color-mix(in oklch, var(--seed-accent) 40%, black);
+}
+
+/* if the user selects dark mode */
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* user selects system default */
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme]) {
+        color-scheme: dark;
+    }
+}
+
+
+/* semantic color tokens */
+:root,
+html {
+    --color-bg: light-dark(
+        var(--seed-bg),
+        oklch(0.18 0.02 45)
+    );
+
+    --color-surface: light-dark(
+        var(--seed-surface),
+        oklch(0.23 0.025 45)
+    );
+
+    --color-text: light-dark(
+        var(--seed-text),
+        oklch(0.93 0.015 65)
+    );
+
+    --color-text-muted: light-dark(
+        var(--seed-text-muted),
+        oklch(0.78 0.025 65)
+    );
+
+    --color-accent: light-dark(
+        var(--seed-accent),
+        oklch(0.76 0.14 55)
+    );
+
+    --color-accent-hover: light-dark(
+        var(--seed-accent-hover),
+        oklch(0.83 0.12 60)
+    );
+
+    --color-link: light-dark(
+        var(--seed-link),
+        oklch(0.82 0.13 60)
+    );
+
+    --color-link-hover: light-dark(
+        var(--seed-link-hover),
+        oklch(0.9 0.08 65)
+    );
+
+    --color-border: light-dark(
+        var(--seed-border),
+        oklch(0.37 0.025 45)
+    );
+
+    --color-border-strong: light-dark(
+        var(--seed-border-strong),
+        oklch(0.46 0.03 45)
+    );
+
+    accent-color: var(--color-accent);
+
+    /* header colors */
+    
+    --header-bg: light-dark(
+        oklch(0.78 0.11 50),
+        oklch(0.38 0.08 45)
+    );
+
+
+    --header-text: light-dark(#502b1a, #ffffff);
+
+    /* the theme toggle colors */
+    --theme-toggle-bg: color-mix(in srgb, var(--header-text) 20%, var(--header-bg));
+    --theme-toggle-border: color-mix(in srgb, var(--header-text) 40%, var(--header-bg));
+    --theme-toggle-bg-hover: color-mix(in srgb, var(--header-text) 30%, var(--header-bg));
+    --theme-toggle-border-hover: color-mix(in srgb, var(--header-text) 55%, var(--header-bg));
+
+    /* shadows */
+    --shadow-color: light-dark(
+        rgb(52 36 29 / 0.09),
+        rgb(0 0 0 / 0.3)
+    );
+
+    --shadow-sm: 0 4px 14px var(--shadow-color);
+    --shadow-md: 0 6px 20px var(--shadow-color);
+
+    /* legacy colors for older portfolio styles */
+    --color-text-light: var(--color-text-muted);
+    --color-primary: var(--color-accent);
+    --color-primary-dark: light-dark(
+        var(--accent-700),
+        var(--accent-400)
+    );
+    --color-primary-light: light-dark(
+        var(--accent-200),
+        var(--color-surface)
+    );
     --color-white: #ffffff;
 }
