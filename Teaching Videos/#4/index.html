@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Gradients Playground</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Advanced Gradients Playground</h1>
+      <p>Exploring CSS patterns, animations, and @property!</p>
+    </header>
+
+    <section>
+      <h2>1. Gradient Patterns</h2>
+      <p>Move the slider to change the pattern size.</p>
+
+      <label for="tileSize">
+        Tile Size: <output id="sizeValue">30px</output>
+      </label>
+      <input type="range" id="tileSize"
+             min="10" max="80" value="30">
+
+      <div class="pattern-container">
+        <article>
+          <div class="pattern stripes"></div>
+          <h3>Diagonal Stripes</h3>
+        </article>
+
+        <article>
+          <div class="pattern dots"></div>
+          <h3>Dot Grid</h3>
+        </article>
+
+        <article>
+          <div class="pattern grid-lines"></div>
+          <h3>Line Grid</h3>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Repeating Gradients</h2>
+      <p>This pattern repeats its color stops automatically.</p>
+      <div class="repeating-demo"></div>
+    </section>
+
+    <section>
+      <h2>3. Animating with @property</h2>
+      <p>
+        Registering a custom property lets CSS smoothly
+        animate a gradient angle.
+      </p>
+
+      <div class="animated-gradient">
+        <h3>Look at me move!</h3>
+      </div>
+
+      <button id="toggleAnimation">Pause Animation</button>
+    </section>
+
+    <footer>
+      <p>WDD 331R | Advanced CSS Teaching Demo</p>
+    </footer>
+  </main>
+</body>
+</html>

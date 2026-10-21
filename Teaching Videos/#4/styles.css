@@ -1,0 +1,258 @@
+
+/* Our custom property for animating gradients */
+@property --gradient-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+  }
+  
+  :root {
+    --pink: #f45b9a;
+    --hot-pink: #e83e8c;
+    --light-pink: #ffd6e7;
+    --blush: #fff0f6;
+    --dark-pink: #713653;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff4f8;
+    color: var(--dark-pink);
+    line-height: 1.6;
+  }
+  
+  main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+  }
+  
+  /* Cute pink header */
+  header {
+    text-align: center;
+    padding: 45px 25px;
+    background: linear-gradient(
+      135deg,
+      #ffd6e7,
+      #ff9bc4,
+      #f45b9a
+    );
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 6px 20px #f45b9a30;
+  }
+  
+  header h1 {
+    color: #713653;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+    color: #713653;
+  }
+  
+  /* White cards with pink details */
+  section {
+    background: white;
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 20px;
+    border: 2px solid #ffd6e7;
+    box-shadow: 0 5px 20px #f45b9a15;
+  }
+  
+  h2 {
+    color: #c52d72;
+  }
+  
+  h3 {
+    color: #a62a65;
+  }
+  
+  /* Pink slider */
+  input[type="range"] {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    accent-color: var(--hot-pink);
+  }
+  
+  label {
+    font-weight: bold;
+    color: #c52d72;
+  }
+  
+  /* Pattern cards */
+  .pattern-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  article {
+    text-align: center;
+    background: #fff4f8;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid #ffd6e7;
+  }
+  
+  .pattern {
+    height: 160px;
+    border-radius: 12px;
+    background-size: 30px 30px;
+  }
+  
+  /* Pink diagonal stripes */
+  .stripes {
+    background-image: linear-gradient(
+      45deg,
+      #f45b9a 25%,
+      #ffd6e7 25%,
+      #ffd6e7 50%,
+      #f45b9a 50%,
+      #f45b9a 75%,
+      #ffd6e7 75%
+    );
+  }
+  
+  /* Pink polka dots */
+  .dots {
+    background-color: #fff0f6;
+    background-image: radial-gradient(
+      circle,
+      #e83e8c 20%,
+      transparent 22%
+    );
+  }
+  
+  /* Pink grid */
+  .grid-lines {
+    background-color: #fff0f6;
+    background-image:
+      linear-gradient(#f45b9a 2px, transparent 2px),
+      linear-gradient(90deg, #f45b9a 2px, transparent 2px);
+  }
+  
+  /* Repeating pink stripes */
+  .repeating-demo {
+    height: 140px;
+    border-radius: 12px;
+    background: repeating-linear-gradient(
+      45deg,
+      #f45b9a 0px 10px,
+      #ffd6e7 10px 20px
+    );
+
+    /* background: repeating-linear-gradient(
+        45deg,
+        #f45b9a 0px 20px,
+        #ffd6e7 20px 40px
+    );
+    */
+  }
+  
+  /* Pretty animated pink gradient */
+  .animated-gradient {
+    height: 220px;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+  
+    color: white;
+    text-shadow: 0 2px 8px #71365370;
+  
+    background: linear-gradient(
+      var(--gradient-angle),
+      #ff80b5,
+      #f45b9a,
+      #d946a1,
+      #f9a8d4,
+      #ffb6d9
+    );
+  
+    animation: rotate-gradient 4s linear infinite;
+    box-shadow: 0 8px 25px #f45b9a40;
+  }
+  
+  .animated-gradient h3 {
+    color: white;
+    font-size: 1.8rem;
+  }
+  
+  @keyframes rotate-gradient {
+    to {
+      --gradient-angle: 360deg;
+    }
+  }
+  
+  /* Pause animation */
+  .animated-gradient.paused {
+    animation-play-state: paused;
+  }
+  
+  /* Cute pink button */
+  button {
+    margin-top: 20px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #e83e8c;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px #e83e8c40;
+    transition: transform 0.2s, background 0.2s;
+  }
+  
+  button:hover {
+    background: #c52d72;
+    transform: translateY(-2px);
+  }
+  
+  button:focus-visible {
+    outline: 3px solid #713653;
+    outline-offset: 3px;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 25px;
+    color: #a62a65;
+  }
+  
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .animated-gradient {
+      animation: none;
+    }
+  
+    button {
+      transition: none;
+    }
+  }
+  
+  /* Mobile layout */
+  @media (max-width: 650px) {
+    .pattern-container {
+      grid-template-columns: 1fr;
+    }
+  
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    section {
+      padding: 20px;
+    }
+  }
+  
