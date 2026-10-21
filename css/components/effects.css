@@ -1,0 +1,474 @@
+
+/* visual effects showcase page making it look good! */
+
+/* page setup */
+.effects-page {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* navigation */
+.effects-page .site-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    padding-right: 180px;
+}
+
+.effects-page .site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.effects-page .site-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.effects-page .site-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* hero section */
+.effects-page .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 3rem 2rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-align: center;
+    isolation: isolate;
+}
+
+/* background image */
+.effects-page .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* gradient overlay */
+.effects-page .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgb(61 48 43 / 0.8),
+        rgb(160 76 35 / 0.45)
+    );
+
+    z-index: -1;
+}
+
+/* hero text */
+.effects-page .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.effects-page .hero h1 {
+    color: #ffffff;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+
+    /* text shadow for readability */
+    text-shadow:
+        0 2px 4px rgb(0 0 0 / 0.4),
+        0 5px 12px rgb(0 0 0 / 0.3);
+}
+
+.effects-page .hero p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-shadow: 0 2px 5px rgb(0 0 0 / 0.4);
+}
+
+/* smaller screens */
+@media (max-width: 600px) {
+    .effects-page .site-nav {
+        padding-right: 0;
+        padding-top: 5rem;
+        justify-content: center;
+    }
+
+    .effects-page .hero {
+        min-height: 300px;
+        padding: 2rem 1rem;
+    }
+}
+
+
+/* elevation cards section */
+.effects-page .card-section {
+    margin: 3rem 0;
+}
+
+.effects-page .card-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+/* three cards side by side */
+.effects-page .cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+/* individual cards */
+.effects-page .cards .card {
+    padding: 0;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
+}
+
+/* cards lift when hovered over by the user */
+.effects-page .cards .card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+/* card images */
+.effects-page .card-image {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+/* card text */
+.effects-page .card-body {
+    padding: 1.5rem;
+}
+
+.effects-page .card-body h3 {
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.effects-page .card-body p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* gradient background on the second card */
+.effects-page .card:nth-child(2) {
+    background: linear-gradient(
+        145deg,
+        var(--color-surface),
+        color-mix(in srgb, var(--color-accent) 12%, var(--color-surface))
+    );
+}
+
+/* grayscale filter on third card */
+.effects-page .card:nth-child(3) .card-image {
+    filter: grayscale(100%);
+    transition: filter 0.4s ease;
+}
+
+/* bring the color back on hover */
+.effects-page .card:nth-child(3):hover .card-image {
+    filter: grayscale(0%);
+}
+
+/* responsive cards */
+@media (max-width: 800px) {
+    .effects-page .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .effects-page .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .effects-page .cards .card,
+    .effects-page .card-image {
+        transition: none;
+    }
+
+    .effects-page .cards .card:hover {
+        transform: none;
+    }
+}
+
+
+/* frosted glass section */
+.effects-page .glass-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* background image */
+.effects-page .glass-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.effects-page .glass-bg-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* frosted glass panel */
+.effects-page .glass-panel {
+    width: min(100%, 600px);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+
+    /* transparent background changes with theme of page */
+    background-color: light-dark(
+        rgb(255 249 243 / 0.65),
+        rgb(45 32 26 / 0.75)
+    );
+
+    /* blur and saturate background */
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+
+    border: 1px solid light-dark(
+        rgb(255 255 255 / 0.6),
+        rgb(255 255 255 / 0.2)
+    );
+
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+/* glass text */
+.effects-page .glass-panel h2 {
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.effects-page .glass-panel p {
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+/* smaller screens */
+@media (max-width: 600px) {
+    .effects-page .glass-section {
+        padding: 2rem 1rem;
+    }
+
+    .effects-page .glass-panel {
+        padding: 1.5rem;
+    }
+}
+
+/* accessibility: to reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .effects-page .glass-panel {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background-color: var(--color-surface);
+    }
+}
+
+
+/* icon drop shadow section */
+.effects-page .icon-section {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.effects-page .icon-section h2 {
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.effects-page .icon-section p {
+    color: var(--color-text-muted);
+    max-width: 650px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+/* icons in a row */
+.effects-page .icon-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* individual icons */
+.effects-page .icon-item {
+    width: 65px;
+    height: 65px;
+    padding: 0.5rem;
+
+    /* shadow follows the icon shape */
+    filter:
+        drop-shadow(2px 3px 2px var(--shadow-color))
+        drop-shadow(0 5px 5px var(--shadow-color));
+
+    transition:
+        transform var(--transition-base),
+        filter var(--transition-base);
+}
+
+/* hover effect */
+.effects-page .icon-item:hover {
+    transform: translateY(-5px) scale(1.1);
+
+    filter:
+        drop-shadow(3px 5px 3px var(--shadow-color))
+        drop-shadow(0 8px 8px var(--shadow-color));
+}
+
+/* footer */
+.effects-page .site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .effects-page .icon-item {
+        transition: none;
+    }
+
+    .effects-page .icon-item:hover {
+        transform: none;
+    }
+}
+
+/* couldnt see it like at all in dark mode so gotta fix it with this  */
+
+/* make icons visible in dark mode */
+html[data-theme="dark"] .effects-page .icon-item {
+    filter:
+        invert(1)
+        drop-shadow(2px 3px 2px rgb(0 0 0 / 0.25))
+        drop-shadow(0 5px 5px rgb(0 0 0 / 0.25));
+}
+
+/* dark mode icon hover */
+html[data-theme="dark"] .effects-page .icon-item:hover {
+    filter:
+        invert(1)
+        drop-shadow(3px 5px 3px rgb(0 0 0 / 0.3))
+        drop-shadow(0 8px 8px rgb(0 0 0 / 0.3));
+}
+
+/* this is for the advanced gradient part!  */
+
+/* advanced gradients and @property */
+
+/* tells CSS that this variable is an angle */
+@property --gradient-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 135deg;
+}
+
+/* section styling */
+.effects-page .gradient-section {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.effects-page .gradient-section h2 {
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.effects-page .gradient-section > p {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* animated gradient card */
+.effects-page .gradient-card {
+    --gradient-angle: 135deg;
+
+    padding: 4rem 2rem;
+    border-radius: var(--radius-lg);
+
+    background: conic-gradient(
+        from var(--gradient-angle),
+        #ffcf9f,
+        #e97843,
+        #a64b59,
+        #ffcf9f
+    );
+
+    box-shadow: var(--shadow-md);
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgb(0 0 0 / 0.4);
+
+    transition: --gradient-angle 1.5s ease;
+}
+
+/* rotate gradient on hover */
+.effects-page .gradient-card:hover {
+    --gradient-angle: 495deg;
+}
+
+/* gradient text */
+.effects-page .gradient-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.effects-page .gradient-card p {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .effects-page .gradient-card {
+        transition: none;
+    }
+}

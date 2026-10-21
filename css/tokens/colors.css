@@ -114,15 +114,6 @@ html {
     --theme-toggle-bg-hover: color-mix(in srgb, var(--header-text) 30%, var(--header-bg));
     --theme-toggle-border-hover: color-mix(in srgb, var(--header-text) 55%, var(--header-bg));
 
-    /* shadows */
-    --shadow-color: light-dark(
-        rgb(52 36 29 / 0.09),
-        rgb(0 0 0 / 0.3)
-    );
-
-    --shadow-sm: 0 4px 14px var(--shadow-color);
-    --shadow-md: 0 6px 20px var(--shadow-color);
-
     /* legacy colors for older portfolio styles */
     --color-text-light: var(--color-text-muted);
     --color-primary: var(--color-accent);

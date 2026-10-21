@@ -38,4 +38,25 @@
     --space-xl: 3rem;
 
     --font-body: var(--font-family-sans);
+
+
+    /* shadows for visual effects */
+
+    /* shadow color changes with light and dark mode */
+    --shadow-color: light-dark(
+        rgb(52 36 29 / 0.12),
+        rgb(0 0 0 / 0.4)
+    );
+
+    /* smaller shadow for normal cards */
+    --shadow-sm:
+        0 2px 4px var(--shadow-color),
+        0 5px 12px var(--shadow-color);
+
+    /* bigger shadow for raised cards */
+    --shadow-md:
+        0 4px 8px var(--shadow-color),
+        0 10px 20px var(--shadow-color),
+        0 16px 30px var(--shadow-color);
+
 }

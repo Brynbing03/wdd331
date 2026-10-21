@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Visual Effects | WDD 331R</title>
+
+    <!-- shared css -->
+    <link rel="stylesheet" href="../../css/main.css">
+
+    <!-- light and dark mode -->
+    <script src="../../js/theme-preference.js"></script>
+</head>
+
+<body class="effects-page">
+
+    <div class="page-container">
+
+        <!-- light and dark mode toggle -->
+        <div class="theme-switch">
+
+            <!-- sun icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42-1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42"></path>
+            </svg>
+
+            <!-- slider -->
+            <label class="switch">
+                <input
+                    type="checkbox"
+                    id="theme-toggle"
+                    aria-label="Turn on dark mode"
+                >
+                <span class="slider"></span>
+            </label>
+
+            <!-- moon icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path>
+            </svg>
+
+        </div>
+
+        <!-- reset to system theme -->
+        <button type="button" id="theme-system" class="theme-system" hidden>
+            Use system theme
+        </button>
+
+        <!-- navigation -->
+        <nav class="site-nav">
+            <a href="../../index.html">&larr; Home</a>
+
+            <ul>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#effects" aria-current="page">Effects</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+
+        <!-- hero: gradient and text shadow -->
+        <header class="hero">
+            <img
+                class="hero-image"
+                src="https://picsum.photos/seed/hero-effects/1200/500"
+                alt="Landscape background"
+            >
+
+            <div class="hero-content">
+                <h1>Visual Effects Showcase</h1>
+                <p>Shadows, gradients, and filters working together.</p>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- cards: shadows and hover effects -->
+            <section class="card-section" id="gallery">
+                <h2>Elevation Cards</h2>
+
+                <div class="cards">
+
+                    <article class="card">
+                        <img
+                            class="card-image"
+                            src="https://picsum.photos/seed/card-1/400/250"
+                            alt="Landscape placeholder"
+                        >
+
+                        <div class="card-body">
+                            <h3>Layered Shadows</h3>
+                            <p>
+                                Multiple shadow layers create realistic
+                                depth that changes on hover.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img
+                            class="card-image"
+                            src="https://picsum.photos/seed/card-2/400/250"
+                            alt="Nature placeholder"
+                        >
+
+                        <div class="card-body">
+                            <h3>Gradient Surfaces</h3>
+                            <p>
+                                A subtle gradient on the card background
+                                adds dimension without distracting from content.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img
+                            class="card-image"
+                            src="https://picsum.photos/seed/card-3/400/250"
+                            alt="Scenic placeholder"
+                        >
+
+                        <div class="card-body">
+                            <h3>Filtered Images</h3>
+                            <p>
+                                A grayscale filter changes when you hover
+                                over the image.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- frosted glass section -->
+            <section class="glass-section" id="effects">
+
+                <div class="glass-background">
+                    <img
+                        class="glass-bg-image"
+                        src="https://picsum.photos/seed/glass-bg/1200/400"
+                        alt="Background landscape"
+                    >
+                </div>
+
+                <div class="glass-panel">
+                    <h2>Frosted Glass</h2>
+                    <p>
+                        This panel uses backdrop-filter to blur and
+                        saturate the image behind it while keeping
+                        the text sharp and easy to read.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- icon shadows -->
+            <section class="icon-section" id="about">
+                <h2>Drop Shadow on Transparent Images</h2>
+
+                <p>
+                    These icons use drop-shadow() instead of box-shadow
+                    so the shadow follows the actual shape of the icon.
+                </p>
+
+                <div class="icon-row">
+
+                    <img
+                        class="icon-item"
+                        src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/heart.svg"
+                        alt="Heart icon"
+                    >
+
+                    <img
+                        class="icon-item"
+                        src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/star.svg"
+                        alt="Star icon"
+                    >
+
+                    <img
+                        class="icon-item"
+                        src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/bookmark.svg"
+                        alt="Bookmark icon"
+                    >
+
+                    <img
+                        class="icon-item"
+                        src="https://cdn.jsdelivr.net/npm/@tabler/icons@2.47.0/icons/message-circle.svg"
+                        alt="Message icon"
+                    >
+
+                </div>
+            </section>
+
+            <!-- choose topic section right here!!! yay -->
+
+            <!-- advanced gradients and @property -->
+            <section class="gradient-section">
+                <h2>Advanced Gradients &amp; @property</h2>
+
+                <p>
+                    This section uses CSS @property to animate
+                    a custom gradient angle smoothly.
+                    Hover over the card to see the gradient move!
+                </p>
+
+                <div class="gradient-card">
+                    <h3>Animated Gradient</h3>
+                    <p>
+                        A little CSS magic with custom properties!
+                    </p>
+                </div>
+            </section>
+
+
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Brynlee Bingham</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
