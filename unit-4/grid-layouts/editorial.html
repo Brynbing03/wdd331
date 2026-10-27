@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Layout</title>
+
+    <script src="../../js/theme-preference.js"></script>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../dist/styles.css">
+    <link rel="stylesheet" href="editorial.css">
+</head>
+
+<body class="editorial-page">
+
+    <header>
+        <a href="../../index.html">← Home</a>
+
+        <nav>
+            <a href="../../index.html">Portfolio</a>
+            <a href="cards.html">Card Grid</a>
+        </nav>
+
+        <!-- light and dark mode toggle -->
+        <div class="theme-controls">
+            <div class="theme-switch">
+
+                <!-- sun icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+                </svg>
+
+                <label class="switch">
+                    <input
+                        type="checkbox"
+                        id="theme-toggle"
+                        aria-label="Turn on dark mode"
+                    >
+                    <span class="slider"></span>
+                </label>
+
+                <!-- moon icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path>
+                </svg>
+            </div>
+
+            <button type="button" id="theme-system" class="theme-system" hidden>
+                Use system theme
+            </button>
+        </div>
+    </header>
+
+
+
+    <div class="layout">
+
+        <main>
+            <article>
+                <h1>The Art of Deliberate Practice</h1>
+                <p class="byline">By Alex Morgan &middot; June 2026</p>
+                <p>
+                    Deliberate practice is not simply doing something repeatedly. It is a
+                    structured form of improvement that requires focused attention, immediate
+                    feedback, and consistent effort at the edge of your current ability.
+                    Research across fields from music to athletics to software development
+                    confirms that the quality of practice matters far more than the quantity.
+                </p>
+                <h2>What Makes Practice Deliberate</h2>
+                <p>
+                    Three characteristics separate deliberate practice from mere repetition.
+                    First, the activity must be designed to improve a specific aspect of
+                    performance. Second, it must be performed with full concentration. Third,
+                    it must include feedback so you can identify what to adjust.
+                </p>
+                <blockquote>
+                    <p>
+                        The difference between a master and a beginner is that the master
+                        has failed more times than the beginner has tried.
+                    </p>
+                </blockquote>
+                <h2>Applying It to CSS</h2>
+                <p>
+                    For a CSS developer, deliberate practice means building layouts you
+                    could not build last week, reading the spec when something surprises you,
+                    and inspecting other sites with DevTools to understand decisions you
+                    would not have made yourself. Passive reading and tutorial-following
+                    produce familiarity. Deliberate practice produces skill.
+                </p>
+            </article>
+        </main>
+
+        <aside>
+            <section>
+                <h2>Related Articles</h2>
+                <ul>
+                    <li><a href="#">Grid vs. Flexbox: A Practical Guide</a></li>
+                    <li><a href="#">Writing CSS That Scales</a></li>
+                    <li><a href="#">Debugging Layout Problems</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Topics</h2>
+                <ul class="tags">
+                    <li>CSS Grid</li>
+                    <li>Layout</li>
+                    <li>Practice</li>
+                    <li>Performance</li>
+                </ul>
+            </section>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -78,6 +78,14 @@
 }
 
 
+/* unit 4 links */
+.unit-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+
 /* this adds some dots or circles but idk if i like it enough... we will see... */
 /* 
 .decorative-circles span {

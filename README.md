@@ -9,12 +9,16 @@
 This repository is my portfolio for WDD 331R: Advanced CSS. Each week I add new pages and styles as I work through the course assignments. The site deploys automatically to GitHub Pages when I push changes to main.
 
 
+
 ## Pages
 
 - [Portfolio Home](https://brynbing03.github.io/wdd331/)
 - [Unit 1 - Custom Properties](https://brynbing03.github.io/wdd331/unit-1/custom-properties/index.html)
 - [Unit 2 - Layered Components](https://brynbing03.github.io/wdd331/unit-2/layered-components/index.html)
 - [Unit 3 - Visual Effects](https://brynbing03.github.io/wdd331/unit-3/visual-effects/index.html)
+- [Unit 4 - Editorial Layout](https://brynbing03.github.io/wdd331/unit-4/grid-layouts/editorial.html)
+- [Unit 4 - Responsive Card Grid](https://brynbing03.github.io/wdd331/unit-4/grid-layouts/cards.html)
+
 
 ## CSS Architecture
 
