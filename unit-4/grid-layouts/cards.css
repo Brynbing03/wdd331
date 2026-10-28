@@ -4,13 +4,14 @@
 /* page header */
 .articles-page header {
     text-align: center;
-    padding: 3rem 1.5rem 2rem;
+    padding-block: 3rem 2rem;
+    padding-inline: 1.5rem;
 }
 
 .articles-page header h1 {
     font-size: clamp(2rem, 4vw, 3rem);
     color: var(--color-accent);
-    margin-bottom: 0.5rem;
+    margin-block-end: 0.5rem;
 }
 
 .articles-page header p {
@@ -20,9 +21,10 @@
 
 /* main content */
 .articles-page main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 1.5rem 4rem;
+    max-inline-size: 1200px;
+    margin-inline: auto;
+    padding-block: 1rem 4rem;
+    padding-inline: 1.5rem;
 }
 
 /* responsive card grid */
@@ -39,7 +41,7 @@
 .articles-page .card {
     display: flex;
     flex-direction: column;
-    min-width: 0;
+    min-inline-size: 0;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -55,7 +57,7 @@
 
 /* card image placeholder */
 .articles-page .card > div:first-child {
-    height: 150px;
+    block-size: 150px;
     flex-shrink: 0;
     background: linear-gradient(
         135deg,
@@ -69,27 +71,29 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 1.5rem;
+    padding-block: 1.5rem;
+    padding-inline: 1.5rem;
 }
 
 .articles-page .card h2 {
     font-size: 1.3rem;
     color: var(--color-accent);
-    margin-bottom: 0.75rem;
+    margin-block-end: 0.75rem;
 }
 
 .articles-page .card p {
     color: var(--color-text);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-block-end: 1.5rem;
 }
 
 /* read more links */
 .articles-page .card a {
-    margin-top: auto;
+    margin-block-start: auto;
     color: white;
     background: var(--color-accent);
-    padding: 0.75rem 1rem;
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
     border-radius: var(--radius-md);
     font-weight: bold;
     text-decoration: none;
@@ -104,23 +108,26 @@
 /* smaller screens */
 @media (max-width: 480px) {
     .articles-page header {
-        padding: 2rem 1rem;
+        padding-block: 2rem;
+        padding-inline: 1rem;
     }
 
     .articles-page main {
-        padding: 1rem 1rem 3rem;
+        padding-block: 1rem 3rem;
+        padding-inline: 1rem;
     }
 }
-
 
 /* page navigation */
 .articles-page .page-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto 2rem;
+    max-inline-size: 1200px;
+    margin-block: 0 2rem;
+    margin-inline: auto;
 }
 
 .articles-page .page-nav a {
@@ -132,7 +139,6 @@
 .articles-page .page-nav a:hover {
     color: var(--color-accent);
 }
-
 
 /* theme controls */
 .articles-page .theme-controls {
@@ -151,13 +157,4 @@
 
 .articles-page .theme-system {
     position: static;
-}
-
-/* keep navigation aligned */
-.articles-page .page-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
 }

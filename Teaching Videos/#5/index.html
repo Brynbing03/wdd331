@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Around the World</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <span class="eyebrow">WDD 331R • TEACHING VIDEO #5</span>
+    <h1>CSS Around the World</h1>
+    <h2>The greatest thing since sliced bread in css!</h2>
+    <p>-Brother Keers</p>
+
+    <p>
+      Let's explore how CSS can work with different
+      languages, directions, and writing styles!
+    </p>
+    <span class="hero-tag">Logical Properties + Writing Modes</span>
+  </header>
+
+  <main>
+    <!-- SECTION 1 -->
+    <section class="panel">
+      <span class="section-number">01 / THE BASICS</span>
+      <h2>Meet Inline & Block!</h2>
+      <p>
+        CSS uses two directions to understand how content flows.
+        Inline follows the text, and block follows the lines.
+      </p>
+
+      <div class="axis-grid">
+        <div class="axis-card">
+          <h3>Inline Axis</h3>
+          <div class="axis-arrow">START → → → END</div>
+          <p>In English, text flows left to right.</p>
+        </div>
+
+        <div class="axis-card">
+          <h3>Block Axis</h3>
+          <div class="block-example">
+            <span>Line one</span>
+            <span>↓</span>
+            <span>Line two</span>
+            <span>↓</span>
+            <span>Line three</span>
+          </div>
+          <p>New lines stack from top to bottom.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="panel">
+      <span class="section-number">02 / TRY IT YOURSELF</span>
+      <h2>Let's Flip the Direction!</h2>
+      <p>
+        Click a button to change the writing direction.
+        Watch what happens to the cards!
+      </p>
+
+      <div class="controls">
+        <button class="active" id="ltrBtn" type="button">
+          Left to Right
+        </button>
+        <button id="rtlBtn" type="button">
+          Right to Left
+        </button>
+      </div>
+
+      <p class="status" id="directionStatus" aria-live="polite">
+        Current direction: LTR
+      </p>
+
+      <div class="comparison-grid">
+        <div class="comparison">
+          <span class="bad-label">PHYSICAL CSS</span>
+          <p class="code-label">
+            border-left + padding-left + text-align: left
+          </p>
+
+          <div class="demo-card physical" id="physicalCard" dir="ltr">
+            <span class="card-tag">Featured</span>
+            <h3>My Cute Little Card</h3>
+            <p>
+              My accent border stays on the left,
+              even when the direction changes!
+            </p>
+          </div>
+        </div>
+
+        <div class="comparison">
+          <span class="good-label">LOGICAL CSS</span>
+          <p class="code-label">
+            border-inline-start + padding-inline-start
+          </p>
+
+          <div class="demo-card logical" id="logicalCard" dir="ltr">
+            <span class="card-tag">Featured</span>
+            <h3>My Smart Little Card</h3>
+            <p>
+              My accent border follows the start
+              of the text direction automatically!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip">
+        <strong>What's happening?</strong>
+        Physical CSS uses fixed sides like left and right.
+        Logical CSS uses start and end, so it can adapt!
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="panel">
+      <span class="section-number">03 / THE CSS MAGIC</span>
+      <h2>Same CSS, Different Direction</h2>
+      <p>
+        This little language card uses logical properties.
+        Change the language and see how the layout adapts.
+      </p>
+
+      <div class="controls">
+        <button class="active" id="englishBtn" type="button">
+          English
+        </button>
+        <button id="arabicBtn" type="button">
+          Arabic
+        </button>
+      </div>
+
+      <article class="language-card" id="languageCard" lang="en" dir="ltr">
+        <span class="card-tag" id="languageTag">Hello!</span>
+        <h3 id="languageTitle">Welcome to my website!</h3>
+        <p id="languageText">
+          This card can change its direction without
+          needing a completely different CSS layout.
+        </p>
+        <span class="language-footer" id="languageFooter">
+          Made with logical CSS
+        </span>
+      </article>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="panel">
+      <span class="section-number">04 / WRITING MODES</span>
+      <h2>Wait... Text Can Be Vertical?</h2>
+      <p>
+        The writing-mode property changes how lines
+        are arranged. Try all three options!
+      </p>
+
+      <div class="controls">
+        <button class="active" id="horizontalBtn" type="button">
+          Horizontal
+        </button>
+        <button id="verticalRlBtn" type="button">
+          Vertical RL
+        </button>
+        <button id="verticalLrBtn" type="button">
+          Vertical LR
+        </button>
+      </div>
+
+      <div class="writing-stage">
+        <div class="writing-sample" id="writingSample" lang="ja">
+          <span>こんにちは</span>
+          <span>世界へようこそ</span>
+          <span>CSSは楽しいです</span>
+        </div>
+      </div>
+
+      <p class="status" id="writingStatus" aria-live="polite">
+        writing-mode: horizontal-tb;
+      </p>
+
+      <div class="tip">
+        <strong>Fun fact!</strong>
+        Some Japanese and Chinese text can be written
+        vertically. Logical properties work with those
+        writing modes too!
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="panel">
+      <span class="section-number">05 / QUICK REFERENCE</span>
+      <h2>Your Logical CSS Cheat Sheet</h2>
+      <p>
+        Here are some common physical properties
+        and their logical replacements.
+      </p>
+
+      <div class="cheat-grid">
+        <div class="cheat-card">
+          <span>margin-left</span>
+          <strong>margin-inline-start</strong>
+        </div>
+        <div class="cheat-card">
+          <span>padding-top</span>
+          <strong>padding-block-start</strong>
+        </div>
+        <div class="cheat-card">
+          <span>border-left</span>
+          <strong>border-inline-start</strong>
+        </div>
+        <div class="cheat-card">
+          <span>width</span>
+          <strong>inline-size</strong>
+        </div>
+        <div class="cheat-card">
+          <span>height</span>
+          <strong>block-size</strong>
+        </div>
+        <div class="cheat-card">
+          <span>text-align: left</span>
+          <strong>text-align: start</strong>
+        </div>
+      </div>
+
+      <div class="tip">
+        <strong>Remember:</strong>
+        Inline follows the text. Block follows the lines.
+        Start and end adapt to the writing direction!
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for WDD 331R • Teaching Video #5</p>
+    <p>Logical Properties & Writing Modes</p>
+  </footer>
+</body>
+</html>
