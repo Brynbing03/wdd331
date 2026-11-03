@@ -1,3 +1,4 @@
+
 /* here is the one component styled inside components */
 
 .card {
@@ -26,7 +27,7 @@
     margin-bottom: var(--space-md);
 }
 
-/* Orange buttons */
+/* orange buttons */
 .card a {
     display: inline-block;
     background-color: var(--accent-600);
@@ -43,7 +44,7 @@
     color: #ffffff;
 }
 
-/* Portfolio header */
+/* portfolio header */
 .hero {
     position: relative;
     background-color: light-dark(
@@ -71,23 +72,49 @@
     margin-bottom: var(--space-sm);
 }
 
-/* Accessible keyboard focus */
+/* accessible keyboard focus */
 .card a:focus-visible {
     outline: var(--outline-width) solid var(--color-accent);
     outline-offset: 3px;
 }
 
-
-/* unit 4 links */
+/* unit 4 links - organized vertical buttons */
 .unit-links {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.75rem;
+    width: 100%;
+    margin-top: 1rem;
 }
 
+.unit-links a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: var(--accent-600);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition:
+        background-color var(--transition-base),
+        transform var(--transition-base);
+}
 
-/* this adds some dots or circles but idk if i like it enough... we will see... */
-/* 
+.unit-links a:hover {
+    background-color: var(--accent-700);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.unit-links a:focus-visible {
+    outline: var(--outline-width) solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* decorative circles - keeping these commented out */
+/*
 .decorative-circles span {
     position: absolute;
     border-radius: 50%;
@@ -113,4 +140,5 @@
     height: 90px;
     bottom: -45px;
     right: -20px;
-} */
+}
+*/

@@ -27,7 +27,7 @@
     padding-inline: 1.5rem;
 }
 
-/* responsive card grid */
+/* responsive card grid - fallback */
 .articles-page .card-grid {
     display: grid;
     grid-template-columns: repeat(
@@ -35,9 +35,10 @@
         minmax(min(240px, 100%), 1fr)
     );
     gap: 1.5rem;
+    align-items: stretch;
 }
 
-/* individual cards */
+/* individual cards - fallback */
 .articles-page .card {
     display: flex;
     flex-direction: column;
@@ -47,7 +48,9 @@
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .articles-page .card:hover {
@@ -71,24 +74,27 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding-block: 1.5rem;
-    padding-inline: 1.5rem;
+    min-inline-size: 0;
+    padding: 1.5rem;
 }
 
+/* card titles */
 .articles-page .card h2 {
     font-size: 1.3rem;
     color: var(--color-accent);
     margin-block-end: 0.75rem;
 }
 
+/* card descriptions */
 .articles-page .card p {
     color: var(--color-text);
     line-height: 1.6;
     margin-block-end: 1.5rem;
 }
 
-/* read more links */
+/* read more buttons */
 .articles-page .card a {
+    display: block;
     margin-block-start: auto;
     color: white;
     background: var(--color-accent);
@@ -103,6 +109,65 @@
 .articles-page .card a:hover {
     background: var(--accent-700);
     color: white;
+}
+
+/* SUBGRID UPGRADE */
+/* only applies when the browser supports subgrid */
+@supports (grid-template-rows: subgrid) {
+
+    /* four shared rows:
+       image, title, description, button */
+    .articles-page .card-grid {
+        grid-auto-rows: auto auto auto auto;
+        row-gap: 1.5rem;
+        align-items: stretch;
+    }
+
+    /* each card spans four shared rows */
+    .articles-page .card {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 4;
+        row-gap: 0;
+    }
+
+    /* image takes the first shared row */
+    .articles-page .card > div:first-child {
+        grid-row: 1;
+        block-size: auto;
+        min-block-size: 150px;
+    }
+
+    /* content wrapper inherits the last three rows */
+    .articles-page .card > div:last-child {
+        grid-row: 2 / 5;
+        display: grid;
+        grid-template-rows: subgrid;
+        row-gap: 0;
+        min-block-size: 0;
+        padding: 0 1.5rem 1.5rem;
+    }
+
+    /* title row */
+    .articles-page .card h2 {
+        grid-row: 1;
+        align-self: start;
+        margin: 1.5rem 0 0.75rem;
+    }
+
+    /* description row */
+    .articles-page .card p {
+        grid-row: 2;
+        align-self: start;
+        margin: 0 0 1.5rem;
+    }
+
+    /* button row */
+    .articles-page .card a {
+        grid-row: 3;
+        align-self: end;
+        margin: 0;
+    }
 }
 
 /* smaller screens */

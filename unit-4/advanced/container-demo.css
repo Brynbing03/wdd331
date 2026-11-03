@@ -1,0 +1,189 @@
+
+/* container query demo */
+
+.container-page {
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+}
+
+/* header */
+.demo-header {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.demo-header h1 {
+    color: var(--color-accent);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.demo-header p {
+    color: var(--color-text-muted);
+}
+
+/* navigation */
+.container-page .page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container-page .page-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.container-page .page-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* theme controls */
+.container-page .theme-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container-page .theme-switch {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.container-page .theme-system {
+    position: static;
+}
+
+/* main page layout */
+.demo-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+/* sidebar and main section */
+.sidebar,
+.main-section {
+    min-width: 0;
+}
+
+.sidebar h2,
+.main-section h2 {
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.sidebar > p,
+.main-section > p {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* establish the container */
+.card-container {
+    container-type: inline-size;
+    container-name: feature;
+    width: 100%;
+}
+
+/* component default: stacked */
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* image placeholder */
+.feature-image {
+    min-height: 170px;
+    background: linear-gradient(
+        135deg,
+        var(--accent-200),
+        var(--color-accent)
+    );
+}
+
+/* card content */
+.feature-content {
+    padding: 1.5rem;
+    min-width: 0;
+}
+
+.feature-content h3 {
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+}
+
+.feature-content p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.feature-content a {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.feature-content a:hover {
+    background: var(--accent-700);
+}
+
+/* container query: horizontal when wide */
+@container feature (min-width: 450px) {
+    .feature-card {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .feature-image {
+        flex: 0 0 38%;
+        min-height: 220px;
+    }
+
+    .feature-content {
+        flex: 1;
+    }
+}
+
+/* explanation section */
+.explanation {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.explanation p {
+    line-height: 1.7;
+    margin-top: 0.75rem;
+}
+
+/* responsive page layout */
+@media (max-width: 700px) {
+    .demo-layout {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,214 @@
+
+/* sticky layout demo */
+
+.sticky-page {
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+}
+
+/* header */
+.demo-header {
+    text-align: center;
+    padding: 2rem 1.5rem;
+}
+
+.demo-header h1 {
+    color: var(--color-accent);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.demo-header p {
+    color: var(--color-text-muted);
+}
+
+/* navigation */
+.sticky-page .page-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sticky-page .page-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sticky-page .page-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* theme controls */
+.sticky-page .theme-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sticky-page .theme-switch {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sticky-page .theme-system {
+    position: static;
+}
+
+/* main layout */
+.sticky-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 5rem;
+
+    /*
+    STICKY OVERFLOW BUG FIX:
+
+    I tested overflow: hidden on this wrapper.
+    It caused the sticky sidebar to stop working
+    because the wrapper became the nearest
+    scrolling ancestor, even though it wasn't
+    actually scrolling vertically.
+
+    I changed it to overflow: clip, which still
+    clips overflowing content but does not
+    create a new scroll container. This lets
+    the sidebar stick relative to the page.
+    */
+    overflow: clip;
+}
+
+/* sidebar */
+.sidebar {
+    min-width: 0;
+    align-self: stretch;
+}
+
+/* sticky table of contents */
+.sticky-nav {
+    position: sticky;
+    top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    padding: 1.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.sticky-nav h2 {
+    color: var(--color-accent);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.sticky-nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.sticky-nav a:hover {
+    background: var(--accent-200);
+    color: var(--color-text);
+}
+
+/* article */
+.article-content {
+    min-width: 0;
+}
+
+.article-content section {
+    min-height: 75vh;
+    padding: 2rem;
+    margin-bottom: 2rem;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+
+    scroll-margin-top: 2rem;
+}
+
+.article-content h2 {
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+}
+
+.article-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    max-width: 70ch;
+}
+
+/* code example */
+.code-example {
+    padding: 1.5rem;
+    background: var(--accent-200);
+    border-radius: var(--radius-md);
+    margin-top: 2rem;
+
+    /* decorative clipping belongs here,
+       not on a sticky ancestor */
+    overflow: hidden;
+}
+
+.code-example code {
+    color: #332f3d;
+    font-family: monospace;
+    line-height: 1.8;
+}
+
+/* footer */
+.demo-footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.demo-footer p {
+    margin-bottom: 0.75rem;
+}
+
+.demo-footer a {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* smaller screens */
+@media (max-width: 700px) {
+    .sticky-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        align-self: start;
+    }
+
+    .sticky-nav {
+        position: static;
+    }
+
+    .article-content section {
+        min-height: auto;
+        padding: 1.5rem;
+    }
+}

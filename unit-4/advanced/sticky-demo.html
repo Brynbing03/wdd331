@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Layout | WDD 331R</title>
+
+    <script src="../../js/theme-preference.js"></script>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="sticky-demo.css">
+</head>
+
+<body class="sticky-page">
+
+    <header class="demo-header">
+        <nav class="page-nav">
+            <a href="../../index.html">← Home</a>
+            <a href="container-demo.html">Container Queries</a>
+
+            <!-- light and dark mode toggle -->
+            <div class="theme-controls">
+                <div class="theme-switch">
+
+                    <!-- sun icon -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+                    </svg>
+
+                    <label class="switch">
+                        <input
+                            type="checkbox"
+                            id="theme-toggle"
+                            aria-label="Turn on dark mode"
+                        >
+                        <span class="slider"></span>
+                    </label>
+
+                    <!-- moon icon -->
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path>
+                    </svg>
+                </div>
+
+                <button
+                    type="button"
+                    id="theme-system"
+                    class="theme-system"
+                    hidden
+                >
+                    Use system theme
+                </button>
+            </div>
+        </nav>
+
+        <h1>Sticky Layouts</h1>
+        <p>Scroll down and watch the sidebar stay in place!</p>
+    </header>
+
+    <main class="sticky-layout">
+
+        <!-- sticky table of contents -->
+        <aside class="sidebar">
+            <nav class="sticky-nav" aria-label="Table of contents">
+                <h2>On This Page</h2>
+
+                <a href="#introduction">Introduction</a>
+                <a href="#how-it-works">How Sticky Works</a>
+                <a href="#overflow-bug">Overflow Bug</a>
+                <a href="#the-fix">The Fix</a>
+                <a href="#takeaways">Key Takeaways</a>
+            </nav>
+        </aside>
+
+        <!-- main article -->
+        <article class="article-content">
+
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>
+                    Sticky positioning is a useful CSS feature
+                    that lets an element stay visible while
+                    someone scrolls through a page.
+                </p>
+                <p>
+                    It is commonly used for navigation menus,
+                    sidebars, section headings, and tables
+                    of contents.
+                </p>
+                <p>
+                    On this page, the table of contents on the
+                    left stays visible as you scroll through
+                    the different sections.
+                </p>
+            </section>
+
+            <section id="how-it-works">
+                <h2>How Sticky Works</h2>
+                <p>
+                    CSS sticky positioning combines normal
+                    document flow with fixed-like behavior.
+                </p>
+                <p>
+                    The element scrolls normally until it
+                    reaches a specified offset, such as
+                    top: 2rem.
+                </p>
+                <p>
+                    Once it reaches that point, it stays
+                    in place until the boundaries of its
+                    containing block require it to move.
+                </p>
+
+                <div class="code-example">
+                    <code>
+                        position: sticky;<br>
+                        top: 2rem;
+                    </code>
+                </div>
+            </section>
+
+            <section id="overflow-bug">
+                <h2>The Overflow Bug</h2>
+                <p>
+                    Sticky positioning can stop working
+                    when an ancestor has overflow set
+                    to hidden, auto, or scroll.
+                </p>
+                <p>
+                    This happens because the browser
+                    uses the nearest ancestor with a
+                    scrolling mechanism to determine
+                    the sticky element's scroll behavior.
+                </p>
+                <p>
+                    If that ancestor is not actually
+                    scrolling, the sticky element may
+                    never reach the point where it
+                    becomes sticky.
+                </p>
+            </section>
+
+            <section id="the-fix">
+                <h2>The Fix</h2>
+                <p>
+                    To fix the problem, we need to make
+                    sure there is no unnecessary overflow
+                    setting between the sticky element
+                    and the page's scroll container.
+                </p>
+                <p>
+                    Instead of using overflow: hidden
+                    on the main layout wrapper, we can
+                    use overflow: clip when clipping
+                    is needed without creating a
+                    scrolling container.
+                </p>
+                <p>
+                    We can also apply overflow: hidden
+                    to smaller decorative elements
+                    instead of the ancestor that
+                    contains our sticky sidebar.
+                </p>
+            </section>
+
+            <section id="takeaways">
+                <h2>Key Takeaways</h2>
+                <p>
+                    Sticky positioning is a simple
+                    way to keep important information
+                    visible while scrolling.
+                </p>
+                <p>
+                    The most important things to remember
+                    are to include an offset, check
+                    ancestor overflow properties, and
+                    make sure the sticky element has
+                    enough room to move.
+                </p>
+                <p>
+                    This makes sticky positioning
+                    really useful for longer pages
+                    with navigation or important
+                    information that should stay visible.
+                </p>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="demo-footer">
+        <p>WDD 331R | Advanced CSS Layouts</p>
+        <a href="../../index.html">Back to Portfolio</a>
+    </footer>
+
+</body>
+</html>

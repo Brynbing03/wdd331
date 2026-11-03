@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container Queries | WDD 331R</title>
+
+    <script src="../../js/theme-preference.js"></script>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="container-demo.css">
+</head>
+
+<body class="container-page">
+
+    <header class="demo-header">
+        <nav class="page-nav">
+            <a href="../../index.html">← Home</a>
+            <a href="../grid-layouts/cards.html">Card Grid</a>
+
+            <div class="theme-controls">
+                <div class="theme-switch">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+                    </svg>
+
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle"
+                               aria-label="Turn on dark mode">
+                        <span class="slider"></span>
+                    </label>
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path>
+                    </svg>
+                </div>
+
+                <button type="button" id="theme-system"
+                        class="theme-system" hidden>
+                    Use system theme
+                </button>
+            </div>
+        </nav>
+
+        <h1>Container Queries</h1>
+        <p>One component, two different layouts!</p>
+    </header>
+
+    <main class="demo-layout">
+
+        <aside class="sidebar">
+            <h2>Narrow Container</h2>
+            <p>This card stays stacked because its container is small.</p>
+
+            <div class="card-container">
+                <article class="feature-card">
+                    <div class="feature-image" aria-hidden="true"></div>
+                    <div class="feature-content">
+                        <h3>Creative Layouts</h3>
+                        <p>
+                            Container queries let components respond
+                            to their own available space.
+                        </p>
+                        <a href="#how-it-works">Learn More</a>
+                    </div>
+                </article>
+            </div>
+        </aside>
+
+        <section class="main-section">
+            <h2>Wide Container</h2>
+            <p>
+                This is the exact same component, but it has more
+                space, so it changes to a horizontal layout!
+            </p>
+
+            <div class="card-container">
+                <article class="feature-card">
+                    <div class="feature-image" aria-hidden="true"></div>
+                    <div class="feature-content">
+                        <h3>Creative Layouts</h3>
+                        <p>
+                            Container queries let components respond
+                            to their own available space.
+                        </p>
+                        <a href="#how-it-works">Learn More</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="explanation" id="how-it-works">
+                <h2>How It Works</h2>
+                <p>
+                    Both cards use the same HTML and CSS.
+                    The only difference is the width of
+                    their parent containers.
+                </p>
+                <p>
+                    Instead of using a media query, the
+                    @container rule checks how much space
+                    the component has available.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

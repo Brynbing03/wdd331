@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Brynlee Bingham | WDD 331R Portfolio</title>
     <script src="js/theme-preference.js"></script>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="dist/styles.css">
-    
 </head>
 
 <body>
@@ -19,13 +19,13 @@
             <!-- light and dark mode toggle -->
             <div class="theme-switch">
 
-                <!-- sun icon :) -->
+                <!-- sun icon -->
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                     <circle cx="12" cy="12" r="4"></circle>
                     <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
                 </svg>
 
-                <!-- the sliding toggle -->
+                <!-- sliding toggle -->
                 <label class="switch">
                     <input
                         type="checkbox"
@@ -42,8 +42,13 @@
 
             </div>
 
-            <!-- reset theme back to system default -->
-            <button type="button" id="theme-system" class="theme-system" hidden>
+            <!-- reset theme to system default -->
+            <button
+                type="button"
+                id="theme-system"
+                class="theme-system"
+                hidden
+            >
                 Use system theme
             </button>
 
@@ -62,10 +67,10 @@
         <section class="intro text-center">
             <h2>Welcome!</h2>
             <p>
-                This is my WDD 331R portfolio! I will be adding to this
-                site throughout the semester as I learn new skills with
-                CSS. I am excited to learn more about advanced CSS and
-                web design!
+                This is my WDD 331R portfolio! I will be adding
+                to this site throughout the semester as I learn
+                new skills with CSS. I am excited to learn more
+                about advanced CSS and web design!
             </p>
         </section>
 
@@ -74,6 +79,7 @@
 
             <div class="assignment-grid">
 
+                <!-- unit 1 -->
                 <article class="card">
                     <h2>Unit 1</h2>
                     <p>
@@ -85,6 +91,7 @@
                     </a>
                 </article>
 
+                <!-- unit 2 -->
                 <article class="card">
                     <h2>Unit 2</h2>
                     <p>
@@ -96,26 +103,26 @@
                     </a>
                 </article>
 
-
-
+                <!-- unit 3 -->
                 <article class="card">
                     <h2>Unit 3</h2>
                     <p>
-                        Exploring visual effects with shadows, gradients,
-                        filters, frosted glass, and animated CSS properties.
+                        Exploring visual effects with shadows,
+                        gradients, filters, frosted glass,
+                        and animated CSS properties.
                     </p>
                     <a href="unit-3/visual-effects/index.html">
                         View Unit 3
                     </a>
                 </article>
-                
-                
+
                 <!-- unit 4 -->
                 <article class="card">
                     <h2>Unit 4</h2>
                     <p>
-                        Practicing CSS Grid with responsive layouts,
-                        named grid areas, and flexible article cards.
+                        Practicing CSS Grid, responsive layouts,
+                        subgrid, container queries, and
+                        sticky positioning.
                     </p>
 
                     <div class="unit-links">
@@ -124,14 +131,18 @@
                         </a>
 
                         <a href="unit-4/grid-layouts/cards.html">
-                            View Card Grid
+                            View Card Grid (Subgrid)
+                        </a>
+
+                        <a href="unit-4/advanced/container-demo.html">
+                            View Container Queries
+                        </a>
+
+                        <a href="unit-4/advanced/sticky-demo.html">
+                            View Sticky Layout
                         </a>
                     </div>
                 </article>
-
-
-
-
 
             </div>
         </section>
