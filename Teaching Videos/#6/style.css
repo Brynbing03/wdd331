@@ -1,0 +1,762 @@
+
+/* ========================================
+   THE LITTLE GETAWAY
+   CSS SCROLL SNAP TEACHING DEMO
+   BLUE THEME
+   ======================================== */
+
+/* COLORS AND VARIABLES */
+:root {
+    --pink: #3478b8;
+    --peach: #f28c78;
+    --lavender: #6d91c7;
+    --mint: #40a6b5;
+    --butter: #e4b85d;
+    --blue: #173b65;
+  
+    --background: #f5f8fc;
+    --text: #17304f;
+    --muted: #596b80;
+    --accent: #2469a3;
+    --white: #ffffff;
+  
+    --radius: 22px;
+  }
+  
+  /* BASIC RESET */
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  
+  button,
+  select {
+    font: inherit;
+  }
+  
+  button,
+  select,
+  input {
+    accent-color: var(--accent);
+  }
+  
+  button:focus-visible,
+  select:focus-visible,
+  input:focus-visible,
+  .carousel:focus-visible,
+  .vertical-demo:focus-visible,
+  .tall-scroll:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+  }
+  
+  /* ========================================
+     HEADER
+     ======================================== */
+  
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.3rem 6%;
+    background: white;
+    border-bottom: 1px solid #d6e4f0;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  .header-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  
+  /* ========================================
+     HERO
+     ======================================== */
+  
+  .hero {
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    background: linear-gradient(
+      135deg,
+      #d8e9f7,
+      #a8cbe6,
+      #e0edf8
+    );
+  }
+  
+  .eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.15;
+    margin: 1rem auto;
+  }
+  
+  .hero h1 span {
+    color: #175c98;
+  }
+  
+  .hero p {
+    max-width: 580px;
+    margin: 0 auto 1.5rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+  
+  .hero-tag {
+    display: inline-block;
+    padding: 0.65rem 1.2rem;
+    border-radius: 100px;
+    background: white;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  
+  /* ========================================
+     SHARED SECTIONS
+     ======================================== */
+  
+  .demo-section,
+  .explanation-section,
+  .comparison-section,
+  .tall-section,
+  .takeaway-section {
+    padding: 5rem 6%;
+  }
+  
+  .section-heading {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.2;
+    margin: 0.75rem 0;
+  }
+  
+  .section-heading p,
+  .section-intro {
+    color: var(--muted);
+    max-width: 650px;
+  }
+  
+  .section-heading p {
+    margin: 0 auto;
+  }
+  
+  .section-intro {
+    margin-bottom: 2rem;
+  }
+  
+  /* ========================================
+     INTERACTIVE CONTROLS
+     ======================================== */
+  
+  .controls {
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #d6e4f0;
+    border-radius: var(--radius);
+  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 1.25rem;
+  }
+  
+  .control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1 1 160px;
+  }
+  
+  .control-group label {
+    font-size: 0.85rem;
+    font-weight: bold;
+  }
+  
+  .control-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #c7d9e8;
+    border-radius: 10px;
+    background: #f5f9fd;
+    color: var(--text);
+  }
+  
+  .checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding-bottom: 0.7rem;
+  }
+  
+  .checkbox-group input {
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+  }
+  
+  .reset-btn {
+    border: none;
+    background: var(--accent);
+    color: white;
+    border-radius: 10px;
+    padding: 0.8rem 1.3rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .reset-btn:hover {
+    background: #174f82;
+  }
+  
+  /* CURRENT CSS PREVIEW */
+  
+  .code-preview {
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    background: #173b65;
+    color: white;
+  }
+  
+  .code-preview span {
+    display: block;
+    font-size: 0.8rem;
+    color: #a9d7f5;
+    margin-bottom: 0.4rem;
+  }
+  
+  .code-preview code {
+    display: block;
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  
+  /* ========================================
+     MAIN SCROLL SNAP CAROUSEL
+     ======================================== */
+  
+  .carousel {
+    display: flex;
+    gap: 1.25rem;
+  
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem;
+  
+    /* Allows horizontal scrolling */
+    overflow-x: auto;
+    overflow-y: hidden;
+  
+    /* MAIN PROPERTY #1:
+       x = horizontal scrolling
+       mandatory = snap when scrolling stops */
+    scroll-snap-type: x mandatory;
+  
+    /* Prevent horizontal scroll chaining */
+    overscroll-behavior-x: contain;
+  
+    /* Gives the cards room to align */
+    scroll-padding-inline: 1.25rem;
+  
+    border-radius: var(--radius);
+    background: #e3eef8;
+  
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+  }
+  
+  .carousel-card {
+    /* Each card keeps its own width */
+    flex: 0 0 clamp(260px, 80vw, 340px);
+  
+    min-height: 390px;
+    padding: 2rem;
+    border-radius: 20px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  
+    /* MAIN PROPERTY #2:
+       Each card snaps to the start */
+    scroll-snap-align: start;
+  
+    /* Normal allows fast swipes to skip cards.
+       The demo toggle can change this to always. */
+    scroll-snap-stop: normal;
+  
+    box-shadow: 0 8px 20px rgba(23, 59, 101, 0.12);
+  }
+  
+  /* ========================================
+     CARD COLORS
+     ======================================== */
+  
+  .pink {
+    background: var(--pink);
+  }
+  
+  .peach {
+    background: var(--peach);
+  }
+  
+  .lavender {
+    background: var(--lavender);
+  }
+  
+  .mint {
+    background: var(--mint);
+  }
+  
+  .butter {
+    background: var(--butter);
+  }
+  
+  .blue {
+    background: var(--blue);
+  }
+  
+  /* White text on darker cards */
+  .carousel-card.pink,
+  .carousel-card.lavender,
+  .carousel-card.mint,
+  .carousel-card.blue {
+    color: white;
+  }
+  
+  /* Dark text on lighter cards */
+  .carousel-card.peach,
+  .carousel-card.butter {
+    color: #17304f;
+  }
+  
+  /* ========================================
+     CARD CONTENT
+     ======================================== */
+  
+  .card-number {
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    opacity: 0.85;
+  }
+  
+  .card-emoji {
+    font-size: 4.5rem;
+    text-align: center;
+    width: 100%;
+    padding: 1.2rem 0;
+  }
+  
+  .card-category {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+  }
+  
+  .carousel-card h3 {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+  }
+  
+  .carousel-card p {
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem;
+  }
+  
+  .card-tag {
+    margin-top: auto;
+    padding: 0.5rem 0.85rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  .carousel-card.peach .card-tag,
+  .carousel-card.butter .card-tag {
+    background: rgba(255, 255, 255, 0.55);
+  }
+  
+  .scroll-hint {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+  
+  /* ========================================
+     HOW IT WORKS
+     ======================================== */
+  
+  .explanation-section {
+    background: #dcebf7;
+    text-align: center;
+  }
+  
+  .explanation-section .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .explanation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 950px;
+    margin: 2rem auto 0;
+  }
+  
+  .explanation-card {
+    text-align: left;
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: 0 5px 20px rgba(23, 59, 101, 0.05);
+  }
+  
+  .step-number {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .explanation-card h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .explanation-card p {
+    color: var(--muted);
+  }
+  
+  .explanation-card code,
+  .takeaway-code code {
+    display: block;
+    overflow-wrap: anywhere;
+    padding: 0.8rem;
+    background: #e3eef8;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #173b65;
+  }
+  
+  /* ========================================
+     MANDATORY VS PROXIMITY
+     ======================================== */
+  
+  .comparison-section {
+    text-align: center;
+    background: #f5f8fc;
+  }
+  
+  .comparison-section .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+  
+  .comparison-item {
+    min-width: 0;
+  }
+  
+  .comparison-item > p {
+    color: var(--muted);
+  }
+  
+  .vertical-demo {
+    height: 260px;
+    overflow-y: auto;
+  
+    border: 8px solid white;
+    border-radius: 20px;
+  
+    box-shadow: 0 5px 25px rgba(23, 59, 101, 0.1);
+  
+    overscroll-behavior-y: contain;
+  }
+  
+  .mandatory-demo {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .proximity-demo {
+    scroll-snap-type: y proximity;
+  }
+  
+  .vertical-panel {
+    height: 244px;
+    padding: 2rem;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    scroll-snap-align: start;
+  }
+  
+  .vertical-panel:nth-child(1) {
+    background: #3478b8;
+    color: white;
+  }
+  
+  .vertical-panel:nth-child(2) {
+    background: #6d91c7;
+    color: white;
+  }
+  
+  .vertical-panel:nth-child(3) {
+    background: #40a6b5;
+    color: #102f43;
+  }
+  
+  .vertical-panel span {
+    font-weight: bold;
+  }
+  
+  .vertical-panel h4 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  .vertical-panel p {
+    margin: 0;
+  }
+  
+  /* ========================================
+     TALL CONTENT DEMO
+     ======================================== */
+  
+  .tall-section {
+    background: #e7f0f8;
+    text-align: center;
+  }
+  
+  .tall-section .section-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .tall-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+  
+  .tall-demo-item {
+    min-width: 0;
+  }
+  
+  .tall-demo-item > p {
+    color: var(--muted);
+  }
+  
+  .tall-scroll {
+    height: 280px;
+    overflow-y: auto;
+  
+    background: white;
+    border: 8px solid white;
+    border-radius: 20px;
+  
+    text-align: left;
+    overscroll-behavior-y: contain;
+  }
+  
+  .mandatory-tall {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .proximity-tall {
+    scroll-snap-type: y proximity;
+  }
+  
+  .tall-panel {
+    min-height: 260px;
+    padding: 1.5rem;
+    background: #b9e3e6;
+  
+    scroll-snap-align: start;
+  }
+  
+  .tall-panel:nth-child(2) {
+    background: #c5def2;
+  }
+  
+  .tall-panel:nth-child(3) {
+    background: #f5df9c;
+  }
+  
+  .tall-panel h4 {
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+  
+  .tall-panel p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .extra-tall {
+    min-height: 700px;
+  }
+  
+  .note {
+    max-width: 750px;
+    margin: 2rem auto 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  
+  /* ========================================
+     FINAL TAKEAWAY
+     ======================================== */
+  
+  .takeaway-section {
+    text-align: center;
+    background: #f5f8fc;
+  }
+  
+  .takeaway-section > p {
+    max-width: 650px;
+    margin: 1rem auto 2rem;
+    color: var(--muted);
+  }
+  
+  .takeaway-code {
+    max-width: 500px;
+    margin: auto;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  /* ========================================
+     FOOTER
+     ======================================== */
+  
+  footer {
+    padding: 2rem;
+    background: #173b65;
+    color: white;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  
+  footer p {
+    margin: 0.3rem;
+  }
+  
+  /* ========================================
+     RESPONSIVE DESIGN
+     ======================================== */
+  
+  @media (max-width: 700px) {
+  
+    .site-header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero {
+      padding: 3.5rem 1.25rem;
+    }
+  
+    .demo-section,
+    .explanation-section,
+    .comparison-section,
+    .tall-section,
+    .takeaway-section {
+      padding: 3.5rem 1.25rem;
+    }
+  
+    .controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .control-group {
+      flex: auto;
+    }
+  
+    .checkbox-group {
+      justify-content: flex-start;
+    }
+  
+    .explanation-grid,
+    .comparison-grid,
+    .tall-demo-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .carousel-card {
+      flex-basis: min(80vw, 340px);
+      min-height: 370px;
+      padding: 1.5rem;
+    }
+  
+    .card-emoji {
+      font-size: 3.5rem;
+    }
+  
+    .carousel-card h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* ========================================
+     REDUCED MOTION
+     ======================================== */
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
