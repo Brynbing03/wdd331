@@ -1,0 +1,330 @@
+
+/* My CSS Typography Demo */
+/* WDD 331R - Teaching Video #7 */
+
+/* Colors */
+:root {
+    --purple: #7566a8;
+    --dark-purple: #504579;
+    --light-purple: #eee9fa;
+    --blue: #8faed4;
+    --light-blue: #eaf3fc;
+    --background: #f9f8fd;
+    --text: #333345;
+  
+    line-height: 1.6;
+  }
+  
+  /* Basic page styling */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+  }
+  
+  /* Header */
+  header {
+    background-color: var(--light-purple);
+    text-align: center;
+    padding: 45px 20px;
+    border-bottom: 4px solid var(--blue);
+  }
+  
+  header h1 {
+    color: var(--dark-purple);
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  header p {
+    margin: 10px 0;
+  }
+  
+  .subtitle {
+    color: var(--purple);
+    font-size: 0.9rem;
+  }
+  
+  /* Main content */
+  main {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 0 20px;
+  }
+  
+  /* Each demo section */
+  section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd8ef;
+    border-radius: 10px;
+  }
+  
+  section h2 {
+    color: var(--dark-purple);
+    margin-top: 0;
+  }
+  
+  section > p {
+    max-width: 70ch;
+  }
+  
+  /* Example boxes */
+  .example {
+    background-color: var(--light-blue);
+    border-left: 4px solid var(--blue);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  
+  
+/* Buttons and dropdowns */
+
+button,
+select {
+  background-color: #e5def8;
+  color: #504579;
+  border: 2px solid #b7a9df;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 12px 0;
+  transition: all 0.2s ease;
+}
+
+/* Button hover */
+button:hover {
+  background-color: #cfc3f0;
+  border-color: #9280c7;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px #7566a830;
+}
+
+/* Dropdown styling */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding: 12px 42px 12px 18px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23504579' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+}
+
+select:hover {
+  background-color: #dcd3f4;
+  border-color: #9280c7;
+}
+
+/* When clicking a dropdown or button */
+button:focus-visible,
+select:focus-visible,
+input[type="range"]:focus-visible {
+  outline: 3px solid #91b5e2;
+  outline-offset: 3px;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  color: #504579;
+  margin-right: 12px;
+}
+
+/* Sliders */
+input[type="range"] {
+  accent-color: #8b79c6;
+  cursor: pointer;
+  vertical-align: middle;
+  width: 180px;
+  max-width: 100%;
+  margin: 12px 8px;
+}
+
+/* Slider numbers */
+#clampValue,
+#chValue {
+  display: inline-block;
+  background-color: #eaf3fc;
+  color: #504579;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #c9d9ef;
+}
+
+  
+  /* Code examples */
+  pre {
+    background-color: #eeeafa;
+    color: #504579;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  /* -------------------------------- */
+  /* DEMO 1 - Text Wrapping */
+  /* -------------------------------- */
+  
+  #wrapHeading {
+    max-width: 360px;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    color: var(--dark-purple);
+    text-wrap: wrap;
+  }
+  
+  #wrapParagraph {
+    max-width: 380px;
+    text-wrap: wrap;
+  }
+  
+  /* -------------------------------- */
+  /* DEMO 2 - Drop Caps */
+  /* -------------------------------- */
+  
+  .drop-cap {
+    max-width: 550px;
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  .drop-cap.enabled::first-letter {
+    color: var(--purple);
+    -webkit-initial-letter: 3;
+    initial-letter: 3;
+    margin-right: 8px;
+  }
+  
+  /* -------------------------------- */
+  /* DEMO 3 - Line Clamping */
+  /* -------------------------------- */
+  
+  .vacation-card {
+    background-color: white;
+    max-width: 350px;
+    padding: 20px;
+    border: 1px solid #c9d9ef;
+    border-radius: 8px;
+  }
+  
+  .vacation-card h3 {
+    color: var(--dark-purple);
+    margin-top: 0;
+  }
+  
+  .clamp-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  
+  /* -------------------------------- */
+  /* DEMO 4 - The ch Unit */
+  /* -------------------------------- */
+  
+  #measureText {
+    max-width: 45ch;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  /* -------------------------------- */
+  /* DEMO 5 - lh and rlh */
+  /* -------------------------------- */
+  
+  #rhythmExample {
+    max-width: 500px;
+  }
+  
+  /* Normal spacing */
+  #rhythmExample:not(.rhythm-demo) h3 {
+    margin: 10px 0;
+  }
+  
+  #rhythmExample:not(.rhythm-demo) p {
+    margin: 10px 0;
+  }
+  
+  /* Spacing based on line height */
+  .rhythm-demo {
+    line-height: 1.5;
+  }
+  
+  .rhythm-demo p {
+    margin-block: 0 1lh;
+  }
+  
+  .rhythm-demo h3 {
+    margin-block: 2rlh 1rlh;
+    color: var(--dark-purple);
+  }
+  
+  /* -------------------------------- */
+  /* DEMO 6 - The ex Unit */
+  /* -------------------------------- */
+  
+  .ex-example {
+    font-size: 24px;
+  }
+  
+  .ex-square {
+    display: inline-block;
+    width: 2ex;
+    height: 2ex;
+    background-color: var(--purple);
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background-color: var(--light-purple);
+    padding: 20px;
+    color: var(--dark-purple);
+    margin-top: 40px;
+  }
+  
+  footer p {
+    margin: 5px;
+  }
+  
+  /* Mobile styling */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    main {
+      padding: 0 12px;
+    }
+  
+    section {
+      padding: 18px;
+    }
+  
+    .example {
+      padding: 15px;
+    }
+  }
+  

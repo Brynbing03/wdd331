@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Typography Playground | Unit 5</title>
+
+    <!-- my custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- my css files -->
+    <link rel="stylesheet" href="../dist/styles.css">
+    <link rel="stylesheet" href="../css/tokens/colors.css">
+    <link rel="stylesheet" href="../css/tokens/variables.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./script.js" defer></script>
+
+    <script src="./script.js" defer></script>
+    <script src="../js/theme-preference.js" defer></script>
+
+</head>
+<body>
+    
+    <header class="site-header">
+        <a href="../index.html" class="home-link">← Back to Portfolio</a>
+
+        <div class="header-right">
+            <span>WDD 331 | Unit 5</span>
+
+            <!-- light and dark mode toggle -->
+            <div class="theme-switch">
+                <!-- sun icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path>
+                </svg>
+
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle"
+                        aria-label="Turn on dark mode">
+                    <span class="slider"></span>
+                </label>
+
+                <!-- moon icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- reset to computer theme -->
+    <button id="theme-system" class="theme-system" type="button" hidden>
+        Use system theme
+    </button>
+
+
+    <main>
+        <section class="hero">
+            <p class="eyebrow">A LITTLE TYPOGRAPHY EXPERIMENT</p>
+            <h1>Let's Talk About Type!</h1>
+            <p class="hero-text">
+                Playing around with font sizes, spacing, and styles
+                to make a website look a little more put together.
+            </p>
+        </section>
+
+        <section class="demo-section">
+            <h2>My Font Scale</h2>
+            <p>
+                I used a major third scale with a ratio of 1.25.
+                The bigger text changes with the screen size,
+                but the smaller text stays the same.
+            </p>
+
+            <div class="scale-list">
+                <div class="scale-item">
+                    <span>Display</span>
+                    <p class="type-display">Big & Bold</p>
+                </div>
+
+                <div class="scale-item">
+                    <span>Heading Large</span>
+                    <p class="type-heading-lg">A Little Smaller</p>
+                </div>
+
+                <div class="scale-item">
+                    <span>Heading Medium</span>
+                    <p class="type-heading-md">Getting Smaller</p>
+                </div>
+
+                <div class="scale-item">
+                    <span>Heading Small</span>
+                    <p class="type-heading-sm">Just Right</p>
+                </div>
+
+                <div class="scale-item">
+                    <span>Body</span>
+                    <p class="type-body">This is normal body text.</p>
+                </div>
+
+                <div class="scale-item">
+                    <span>Caption</span>
+                    <p class="type-caption">And this is my little caption!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Meet My Fonts</h2>
+
+            <div class="font-grid">
+                <div class="font-card">
+                    <span class="font-label">HEADING FONT</span>
+                    <h3 class="heading-example">Nunito Sans</h3>
+                    <p>
+                        I chose Nunito Sans for my headings because
+                        it looks clean, friendly, and a little more fun.
+                    </p>
+                </div>
+
+                <div class="font-card">
+                    <span class="font-label">BODY FONT</span>
+                    <h3 class="system-example">System Font</h3>
+                    <p>
+                        I kept a simple system font for body text
+                        because it is easy to read.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Try It Out!</h2>
+            <p>
+                Change the text size and see how it affects
+                the little preview below.
+            </p>
+
+            <div class="playground">
+                <label for="size-slider">Text Size</label>
+                <input
+                    type="range"
+                    id="size-slider"
+                    min="14"
+                    max="40"
+                    value="20"
+                >
+
+                <span id="size-value">20px</span>
+
+                <div class="preview-box">
+                    <p id="preview-text">Make today a good day!</p>
+                </div>
+
+                <button id="reset-button" type="button">Reset Size</button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Why Typography Matters</h2>
+            <p>
+                Typography is more than just picking a cute font.
+                It helps people know what to read first and makes
+                everything easier to follow. Having font tokens
+                also makes it way easier to update the design
+                without changing every single page.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made for WDD 331 | Advanced CSS</p>
+    </footer>
+
+</body>
+</html>

@@ -1,13 +1,72 @@
-/* all are old except i added --radius-md and --shadow-sm */
+
+/* fonts, spacing, and other variables */
 
 :root {
     /* fonts and typography stuff */
-    --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-family-heading: "Nunito Sans", Arial, sans-serif;
+    --font-family-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-family-sans: var(--font-family-body);
     --font-family-mono: monospace;
 
-    --font-size-sm: 1.4rem;
-    --font-size-md: 1.6rem;
-    --font-size-lg: 1.8rem;
+    /* major third modular scale - ratio 1.25 */
+    /* base size is 1rem (16px) */
+
+    /* smaller text stays fixed */
+    --font-size-xs: 0.8rem;
+    --font-size-sm: 0.9rem;
+    --font-size-md: 1rem;
+
+    /* fluid sizes from 375px to 1200px */
+    /* larger sizes follow the 1.25 scale */
+
+    /* 18px to 20px */
+    --font-size-lg: clamp(
+        1.125rem,
+        calc(1.0682rem + 0.2424vw),
+        1.25rem
+    );
+
+    /* 20px to 25px */
+    --font-size-xl: clamp(
+        1.25rem,
+        calc(1.108rem + 0.6061vw),
+        1.5625rem
+    );
+
+    /* 25px to 31.25px */
+    --font-size-2xl: clamp(
+        1.5625rem,
+        calc(1.385rem + 0.7576vw),
+        1.953125rem
+    );
+
+    /* 31.25px to 39.06px */
+    --font-size-3xl: clamp(
+        1.953125rem,
+        calc(1.7312rem + 0.947vw),
+        2.441406rem
+    );
+
+    /* 39.06px to 48.83px */
+    --font-size-4xl: clamp(
+        2.441406rem,
+        calc(2.164rem + 1.1837vw),
+        3.051758rem
+    );
+
+    /* semantic font sizes */
+    /* components use these instead of scale steps */
+    --font-size-body: var(--font-size-md);
+    --font-size-caption: var(--font-size-xs);
+    --font-size-heading-sm: var(--font-size-lg);
+    --font-size-heading-md: var(--font-size-xl);
+    --font-size-heading-lg: var(--font-size-2xl);
+    --font-size-display: var(--font-size-4xl);
+
+    /* line heights */
+    --line-height-body: 1.7;
+    --line-height-heading: 1.25;
+    --line-height-display: 1.1;
 
     /* spacing */
     --spacing-xs: 4px;
@@ -21,7 +80,7 @@
     --radius-md: 12px;
     --radius-lg: 20px;
 
-    /* transitions  */
+    /* transitions */
     --transition-base: 0.2s ease;
 
     /* icons */
@@ -31,14 +90,13 @@
     /* focus */
     --outline-width: 2px;
 
-    /* the legacy variables for the older pages */
+    /* legacy variables for older pages */
     --space-sm: var(--spacing-sm);
     --space-md: var(--spacing-md);
     --space-lg: var(--spacing-xl);
     --space-xl: 3rem;
 
-    --font-body: var(--font-family-sans);
-
+    --font-body: var(--font-family-body);
 
     /* shadows for visual effects */
 
@@ -58,5 +116,4 @@
         0 4px 8px var(--shadow-color),
         0 10px 20px var(--shadow-color),
         0 16px 30px var(--shadow-color);
-
 }

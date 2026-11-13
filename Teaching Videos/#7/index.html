@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My CSS Typography Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>CSS Typography Demo</h1>
+    <p>Playing around with some fun CSS text properties!</p>
+    <p class="subtitle">WDD 331R | Teaching Video #7</p>
+  </header>
+
+  <main>
+
+    <!-- TEXT WRAPPING -->
+    <section>
+      <h2>1. Text Wrapping</h2>
+
+      <p>
+        Text wrapping controls how words move onto the
+        next line. We can use balance for headings
+        and pretty for paragraphs.
+      </p>
+
+      <label for="wrapSelect">Choose a wrapping style:</label>
+
+      <select id="wrapSelect">
+        <option value="wrap">Normal</option>
+        <option value="balance">Balance</option>
+        <option value="pretty">Pretty</option>
+      </select>
+
+      <div class="example">
+        <h3 id="wrapHeading">
+          Making Beautiful Websites With Just a Little Bit of CSS
+        </h3>
+
+        <p id="wrapParagraph">
+          Learning CSS is actually really fun because there
+          are so many little things you can do to make a
+          website look better and feel more professional
+          without having to write a bunch of extra code.
+        </p>
+      </div>
+
+      <pre id="wrapCode">text-wrap: wrap;</pre>
+    </section>
+
+
+    <!-- DROP CAPS -->
+    <section>
+      <h2>2. Drop Caps</h2>
+
+      <p>
+        A drop cap makes the first letter of a paragraph
+        really big, kind of like you see in magazines.
+      </p>
+
+      <button id="dropButton">Turn Drop Cap On</button>
+
+      <div class="example">
+        <p class="drop-cap" id="dropText">
+          Once upon a time, there was a girl who loved
+          creating cute websites. She discovered that
+          CSS could make even the simplest paragraphs
+          look like something from a magazine.
+          With just a few lines of code, her website
+          started looking so much more creative!
+        </p>
+      </div>
+
+      <pre>p::first-letter {
+  -webkit-initial-letter: 3;
+  initial-letter: 3;
+}</pre>
+    </section>
+
+
+    <!-- LINE CLAMPING -->
+    <section>
+      <h2>3. Line Clamping</h2>
+
+      <p>
+        Line clamping lets us choose how many lines of
+        text are shown before the rest gets cut off.
+        This is really useful for cards!
+      </p>
+
+      <label for="clampSlider">Number of lines:</label>
+
+      <input
+        type="range"
+        id="clampSlider"
+        min="1"
+        max="8"
+        value="3"
+      >
+
+      <strong id="clampValue">3</strong>
+
+      <div class="example">
+        <div class="vacation-card">
+          <h3>My Dream Vacation</h3>
+
+          <p id="clampText" class="clamp-text">
+            My dream vacation would be somewhere warm
+            with beautiful beaches, cute little shops,
+            amazing food, and lots of sunshine.
+            I would spend my mornings walking along
+            the beach, my afternoons exploring new
+            places, and my evenings watching the
+            sunset with my favorite people.
+            It would seriously be the perfect vacation!
+          </p>
+        </div>
+      </div>
+
+      <pre id="clampCode">display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;</pre>
+    </section>
+
+
+    <!-- CH UNIT -->
+    <section>
+      <h2>4. The ch Unit</h2>
+
+      <p>
+        The ch unit is based on the width of the
+        number zero in the current font.
+        It helps control how wide our paragraphs are.
+      </p>
+
+      <label for="chSlider">Paragraph width:</label>
+
+      <input
+        type="range"
+        id="chSlider"
+        min="20"
+        max="90"
+        value="45"
+      >
+
+      <strong id="chValue">45ch</strong>
+
+      <div class="example">
+        <p id="measureText">
+          Good typography makes websites easier to read.
+          When a paragraph is too wide, it can be hard
+          for our eyes to follow the text.
+          When it is too narrow, the text wraps
+          constantly. Using the ch unit helps us
+          find a nice comfortable width for reading.
+        </p>
+      </div>
+
+      <pre id="chCode">max-width: 45ch;</pre>
+    </section>
+
+
+    <!-- LH AND RLH -->
+    <section>
+      <h2>5. The lh and rlh Units</h2>
+
+      <p>
+        These units help us keep spacing consistent
+        based on the height of our text lines.
+      </p>
+
+      <label for="rhythmSelect">Choose spacing:</label>
+
+      <select id="rhythmSelect">
+        <option value="normal">Normal spacing</option>
+        <option value="rhythm">Using lh and rlh</option>
+      </select>
+
+      <div class="example">
+        <div id="rhythmExample">
+
+          <h3>My Favorite Things</h3>
+
+          <p>
+            I love creating websites that are simple,
+            colorful, and easy to use.
+          </p>
+
+          <h3>Why Spacing Matters</h3>
+
+          <p>
+            Consistent spacing helps everything
+            feel more organized and easier to read.
+          </p>
+
+        </div>
+      </div>
+
+      <pre>p {
+  margin-bottom: 1lh;
+}
+
+h3 {
+  margin-top: 2rlh;
+}</pre>
+    </section>
+
+
+    <!-- EX UNIT -->
+    <section>
+      <h2>6. The ex Unit</h2>
+
+      <p>
+        The ex unit is based on the height of a
+        lowercase x in the current font.
+        It can be useful for sizing little things
+        next to text.
+      </p>
+
+      <div class="example">
+        <p class="ex-example">
+          Here is a little square
+          <span class="ex-square" aria-hidden="true"></span>
+          next to my text!
+        </p>
+      </div>
+
+      <pre>.ex-square {
+  width: 2ex;
+  height: 2ex;
+}</pre>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>WDD 331R | Advanced CSS</p>
+    <p>Teaching Video #7</p>
+  </footer>
+
+</body>
+</html>

@@ -1,21 +1,56 @@
+
+/* basic styles for the whole website */
+
 body {
-    font-family: var(--font-body);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
     color: var(--color-text);
     background-color: var(--color-bg);
-    line-height: 1.6;
 }
 
+/* headings */
 h1,
 h2,
-h3 {
-    line-height: 1.2;
-}
-
-h1 {
-    color: var(--color-primary-dark);
+h3,
+h4 {
+    font-family: var(--font-family-heading);
+    line-height: var(--line-height-heading);
+    font-weight: 700;
     margin-bottom: var(--space-sm);
 }
 
+h1 {
+    font-size: var(--font-size-display);
+    line-height: var(--line-height-display);
+    color: var(--color-primary-dark);
+}
+
+h2 {
+    font-size: var(--font-size-heading-lg);
+}
+
+h3 {
+    font-size: var(--font-size-heading-md);
+}
+
+h4 {
+    font-size: var(--font-size-heading-sm);
+}
+
+/* normal text */
+p {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+}
+
+small,
+.caption {
+    font-size: var(--font-size-caption);
+    line-height: 1.5;
+}
+
+/* links */
 a {
     color: var(--color-primary-dark);
 }
