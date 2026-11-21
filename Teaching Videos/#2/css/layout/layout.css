@@ -1,12 +1,12 @@
 .site-header {
     background-color: var(--color-primary);
     text-align: center;
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-xl) var(--spacing-xl);
 }
 
 .site-header p {
     color: var(--color-white);
-    margin-top: var(--space-sm);
+    margin-top: var(--spacing-sm);
 }
 
 .container {
@@ -17,13 +17,13 @@
 
 .container > h2 {
     text-align: center;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--spacing-xl);
 }
 
 .card-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--spacing-xl);
 }
 
 @media (min-width: 700px) {

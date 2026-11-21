@@ -5,8 +5,6 @@
     /* fonts and typography stuff */
     --font-family-heading: "Nunito Sans", Arial, sans-serif;
     --font-family-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --font-family-sans: var(--font-family-body);
-    --font-family-mono: monospace;
 
     /* major third modular scale - ratio 1.25 */
     /* base size is 1rem (16px) */
@@ -91,12 +89,10 @@
     --outline-width: 2px;
 
     /* legacy variables for older pages */
-    --space-sm: var(--spacing-sm);
-    --space-md: var(--spacing-md);
-    --space-lg: var(--spacing-xl);
+
+
     --space-xl: 3rem;
 
-    --font-body: var(--font-family-body);
 
     /* shadows for visual effects */
 

@@ -7,7 +7,7 @@
    margin-bottom: var(--space-xl);
 
    h2 {
-       margin-bottom: var(--space-md);
+       margin-bottom: var(--spacing-md);
    }
 }
 
@@ -18,9 +18,9 @@
        minmax(250px, 1fr)
    );
    gap: clamp(
-       var(--space-md),
+       var(--spacing-md),
        3vw,
-       var(--space-lg)
+       var(--spacing-xl)
    );
 }
 
@@ -29,19 +29,19 @@
    border: 1px solid var(--color-border);
    border-radius: var(--radius);
    padding: clamp(
-       var(--space-md),
+       var(--spacing-md),
        3vw,
-       var(--space-lg)
+       var(--spacing-xl)
    );
 
    display: flex;
    flex-direction: column;
-   gap: var(--space-md);
+   gap: var(--spacing-md);
 
    .card-tag {
        color: var(--color-primary);
        background-color: var(--color-primary-light);
-       padding: var(--space-sm) var(--space-md);
+       padding: var(--spacing-sm) var(--spacing-md);
        border-radius: var(--radius);
        width: fit-content;
        font-size: 0.85rem;
@@ -61,9 +61,9 @@
        display: flex;
        justify-content: space-between;
        align-items: center;
-       gap: var(--space-md);
+       gap: var(--spacing-md);
        border-top: 1px solid var(--color-border);
-       padding-top: var(--space-md);
+       padding-top: var(--spacing-md);
 
        span {
            font-weight: bold;

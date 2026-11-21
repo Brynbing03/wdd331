@@ -9,7 +9,7 @@
 .assignment-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
+    gap: var(--spacing-xl);
 }
 
 .intro {

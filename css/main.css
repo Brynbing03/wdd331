@@ -1,9 +1,7 @@
 
 /* gotta get it all in here! */
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap");
-
-@layer tokens, base, layout, components, utilities;
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800&display=swap"); */
 
 @import url("./tokens/colors.css") layer(tokens);
 @import url("./tokens/variables.css") layer(tokens);
@@ -18,6 +16,8 @@
 @import url("./components/effects.css") layer(components);
 
 @import url("./utilities/utilities.css") layer(utilities);
+
+@layer tokens, base, layout, components, utilities;
 
 
 /* EXTRA HELP TO KNOW WHERE THINGS GO!!! :) */

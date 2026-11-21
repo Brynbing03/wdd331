@@ -9,7 +9,7 @@
 }
 
 .mt-lg {
-   margin-top: var(--space-lg);
+   margin-top: var(--spacing-xl);
 }
 
 .hidden {

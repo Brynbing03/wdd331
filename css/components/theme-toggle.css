@@ -118,7 +118,7 @@
     border-radius: 999px;
 
     /* text styling */
-    font-family: var(--font-body);
+    font-family: var(--font-family-body);
     font-size: 0.7rem;
     font-weight: 600;
     line-height: 1.3;

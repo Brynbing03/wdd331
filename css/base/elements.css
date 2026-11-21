@@ -17,7 +17,7 @@ h4 {
     font-family: var(--font-family-heading);
     line-height: var(--line-height-heading);
     font-weight: 700;
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--spacing-sm);
 }
 
 h1 {

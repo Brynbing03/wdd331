@@ -51,15 +51,15 @@ body {
 
 /* for navigation */
 .site-nav {
-    padding: var(--space-sm);
-    margin-bottom: var(--space-lg);
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
 }
 
 /* this is for board header */
 .board-header {
     text-align: center;
-    margin-bottom: var(--space-lg);
-    padding: var(--space-lg);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xl);
     position: relative;
     padding-top: max(4rem, var(--spacing-xl));
 
@@ -74,19 +74,19 @@ body {
 
     p {
         color: var(--color-text-muted);
-        margin-top: var(--space-sm);
+        margin-top: var(--spacing-sm);
     }
 }
 
 /* card group styling */
 .card-group {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--spacing-xl);
 
     h2 {
         color: var(--color-text);
-        margin-bottom: var(--space-md);
+        margin-bottom: var(--spacing-md);
         border-bottom: 3px solid var(--color-accent);
-        padding-bottom: var(--space-sm);
+        padding-bottom: var(--spacing-sm);
     }
 }
 
@@ -98,13 +98,13 @@ body {
     /* it calculates on the fly */
     /* this makes it so we dont have to wait for js to read it and then change sizes */
     /* you can use var to access the 'variable'(token/property) function */
-    gap: calc(var(--space-md) * 2);
+    gap: calc(var(--spacing-md) * 2);
 }
 
 /* gotta style those individual cards :) */
 .card {
     background-color: var(--color-surface);
-    padding: var(--space-md);
+    padding: var(--spacing-md);
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--color-border);
@@ -113,31 +113,31 @@ body {
         display: inline-block;
         font-size: 0.8rem;
         font-weight: bold;
-        padding: var(--space-sm) var(--space-md);
+        padding: var(--spacing-sm) var(--spacing-md);
         background-color: light-dark(
             var(--accent-200),
             var(--color-border-strong)
         );
         color: var(--color-text);
         border-radius: var(--radius);
-        margin-bottom: var(--space-md);
+        margin-bottom: var(--spacing-md);
     }
 
     h3 {
         color: var(--color-text);
-        margin-bottom: var(--space-sm);
+        margin-bottom: var(--spacing-sm);
     }
 
     p {
         color: var(--color-text);
-        margin-bottom: var(--space-md);
+        margin-bottom: var(--spacing-md);
     }
 
     .card-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: var(--space-sm);
+        gap: var(--spacing-sm);
 
         span {
             color: var(--color-text-muted);
@@ -158,8 +158,8 @@ body {
 /* footer thingz */
 .board-footer {
     text-align: center;
-    padding: var(--space-lg);
-    margin-top: var(--space-lg);
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
     color: var(--color-text-muted);
     border-top: 2px solid var(--color-border-strong);
 }
@@ -219,7 +219,7 @@ body {
     border-radius: 999px;
 
     /* text styling */
-    font-family: var(--font-body);
+    font-family: var(--font-family-body);
     font-size: 0.7rem;
     font-weight: 600;
     line-height: 1.3;
