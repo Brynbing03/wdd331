@@ -1,0 +1,685 @@
+
+/* =========================
+   BASE STYLES
+========================= */
+
+:root {
+    --navy: #57384b;
+    --blue: #d65b8b;
+    --light-blue: #ffe2ec;
+    --peach: #fff4d6;
+    --coral: #e77aa4;
+    --purple: #f6b8d0;
+    --yellow: #ffe69a;
+    --white: #ffffff;
+    --background: #fffaf5;
+    --text: #765f6d;
+  }
+  
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: var(--background);
+    color: var(--navy);
+    line-height: 1.7;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h1, h2, h3, p {
+    margin-top: 0;
+  }
+  
+  p {
+    color: var(--text);
+  }
+  
+  section {
+    padding: 110px 8%;
+  }
+  
+  .eyebrow {
+    display: inline-block;
+    color: var(--blue);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+  
+  /* =========================
+     HEADER
+  ========================= */
+  
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: white;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: -1px;
+  }
+  
+  .logo span {
+    color: var(--coral);
+  }
+  
+  nav {
+    display: flex;
+    gap: 30px;
+  }
+  
+  nav a {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--text);
+  }
+  
+  nav a:hover {
+    color: var(--blue);
+  }
+  
+  /* =========================
+     HERO
+  ========================= */
+  
+  .hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    max-width: 620px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero h1 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.1;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+  }
+  
+  .hero h1 span {
+    color: var(--blue);
+    display: block;
+  }
+  
+  .hero p {
+    max-width: 470px;
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+  }
+  
+  .main-button {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.2s;
+  }
+  
+  .main-button:hover {
+    background: var(--navy);
+  }
+  
+  /* Hero Decoration */
+  
+  .hero-decoration {
+    width: 340px;
+    height: 340px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .circle-one {
+    width: 270px;
+    height: 270px;
+    background: var(--light-blue);
+    top: 25px;
+    left: 20px;
+  }
+  
+  .circle-two {
+    width: 160px;
+    height: 160px;
+    background: var(--peach);
+    top: 0;
+    right: 0;
+  }
+  
+  .circle-three {
+    width: 110px;
+    height: 110px;
+    background: var(--purple);
+    bottom: 0;
+    right: 40px;
+  }
+  
+  /* =========================
+     SECTION HEADINGS
+  ========================= */
+  
+  .section-heading {
+    max-width: 680px;
+    margin: 0 auto 65px;
+    text-align: center;
+  }
+  
+  .section-heading h2,
+  .feature-content h2,
+  .ending-content h2 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+  
+  .section-heading p {
+    font-size: 1.05rem;
+  }
+  
+  /* =========================
+     COMPARISON CARDS
+  ========================= */
+  
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  .comparison-card {
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 18px;
+    padding: 40px;
+  }
+  
+  .comparison-card.featured {
+    background: var(--light-blue);
+    border-color: #d4e5fa;
+  }
+  
+  .card-number {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+    font-weight: bold;
+  }
+  
+  .comparison-card h3 {
+    margin-top: 18px;
+    font-size: 1.5rem;
+  }
+  
+  .comparison-card code,
+  .code-example code {
+    font-family: monospace;
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+  
+  .comparison-card code {
+    display: inline-block;
+    background: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: var(--blue);
+  }
+  
+  /* =========================
+     FEATURE SECTIONS
+  ========================= */
+  
+  .feature-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+    min-height: 650px;
+  }
+  
+  .blue-section {
+    background: var(--light-blue);
+  }
+  
+  .peach-section {
+    background: var(--peach);
+  }
+  
+  .feature-content {
+    max-width: 520px;
+  }
+  
+  .feature-content p {
+    font-size: 1.05rem;
+  }
+  
+  .code-example {
+    background: white;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 30px;
+    border-left: 4px solid var(--blue);
+  }
+  
+  /* Browser Illustration */
+  
+  .browser-window {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px #23365318;
+    max-width: 420px;
+    margin: auto;
+  }
+  
+  .browser-top {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 20px;
+  }
+  
+  .browser-top span {
+    width: 10px;
+    height: 10px;
+    background: #dce4ee;
+    border-radius: 50%;
+  }
+  
+  .browser-progress {
+    width: 70%;
+    height: 8px;
+    border-radius: 10px;
+    background: var(--blue);
+    margin-bottom: 25px;
+  }
+  
+  .browser-lines div {
+    height: 12px;
+    background: #edf2f8;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .browser-lines div:nth-child(2) {
+    width: 85%;
+  }
+  
+  .browser-lines div:nth-child(3) {
+    width: 95%;
+  }
+  
+  .browser-lines div:nth-child(4) {
+    width: 60%;
+  }
+  
+  /* =========================
+     DEMO CARDS
+  ========================= */
+  
+  .cards-section {
+    padding-top: 140px;
+    padding-bottom: 160px;
+  }
+  
+  .cards-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  
+  .demo-card {
+    min-height: 310px;
+    padding: 45px;
+    background: white;
+    border: 1px solid #e6eaf1;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px #23365308;
+  }
+  
+  .demo-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+  
+  .card-icon {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+  .icon-blue {
+    background: var(--light-blue);
+    color: var(--blue);
+  }
+  
+  .icon-peach {
+    background: var(--peach);
+    color: var(--coral);
+  }
+  
+  .icon-purple {
+    background: var(--purple);
+    color: #8471bd;
+  }
+  
+  .icon-yellow {
+    background: var(--yellow);
+    color: #c5a34c;
+  }
+  
+  /* =========================
+     RANGE EXAMPLE
+  ========================= */
+  
+  .range-example {
+    background: white;
+    padding: 60px 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 50px #23365312;
+  }
+  
+  .range-icon {
+    font-size: 4rem;
+    color: var(--coral);
+  }
+  
+  .range-example h3 {
+    font-size: 2rem;
+  }
+  
+  /* =========================
+     ENDING
+  ========================= */
+  
+  .ending-section {
+    text-align: center;
+    min-height: 650px;
+    display: grid;
+    place-items: center;
+  }
+  
+  .ending-content {
+    max-width: 650px;
+  }
+  
+  .ending-content p {
+    margin-bottom: 35px;
+  }
+  
+  footer {
+    background: var(--navy);
+    color: white;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  footer p {
+    color: white;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  
+  /* ======================================
+     SCROLL-DRIVEN ANIMATIONS
+     These are the main teaching examples!
+  ====================================== */
+  
+  /* EXAMPLE 1: Reading Progress Bar */
+  
+  /* The bar fills as the page scrolls. */
+  
+  @keyframes progress-fill {
+    from {
+      transform: scaleX(0);
+    }
+  
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--blue);
+    transform-origin: left center;
+    transform: scaleX(0);
+    z-index: 1000;
+  }
+  
+  /* EXAMPLE 2: Reveal Animation */
+  
+  /* Elements fade in and move upward. */
+  
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(45px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Only add animations when motion is allowed
+     AND the browser supports scroll timelines. */
+  
+  @media (prefers-reduced-motion: no-preference) {
+  
+    @supports (animation-timeline: scroll()) {
+  
+      .progress-bar {
+        animation: progress-fill linear both;
+        animation-timeline: scroll(root);
+      }
+  
+      .reveal {
+        animation: reveal-up linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+  
+    }
+  
+  }
+  
+  /* =========================
+     ACCESSIBILITY
+  ========================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* =========================
+     RESPONSIVE DESIGN
+  ========================= */
+  
+  @media (max-width: 850px) {
+  
+    section {
+      padding: 80px 6%;
+    }
+  
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .hero-content {
+      max-width: 100%;
+    }
+  
+    .hero p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .hero-decoration {
+      width: 240px;
+      height: 240px;
+    }
+  
+    .circle-one {
+      width: 190px;
+      height: 190px;
+    }
+  
+    .circle-two {
+      width: 110px;
+      height: 110px;
+    }
+  
+    .circle-three {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .comparison-grid,
+    .cards-grid,
+    .feature-section {
+      grid-template-columns: 1fr;
+    }
+  
+    .feature-section {
+      gap: 50px;
+    }
+  
+    nav {
+      gap: 15px;
+    }
+  
+  }
+  
+  @media (max-width: 500px) {
+  
+    .site-header {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .hero h1 {
+      letter-spacing: -1px;
+    }
+  
+    .comparison-card,
+    .demo-card {
+      padding: 28px;
+    }
+  
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+  }
+  
+
+/* PINK + YELLOW THEME UPDATES */
+
+.comparison-card {
+    border-color: #f4d7e1;
+  }
+  
+  .comparison-card.featured {
+    border-color: #f1bfd0;
+  }
+  
+  .demo-card {
+    border-color: #f4d7e1;
+    box-shadow: 0 10px 35px #d65b8b12;
+  }
+  
+  .browser-window,
+  .range-example {
+    box-shadow: 0 20px 50px #d65b8b18;
+  }
+  
+  .browser-lines div {
+    background: #fff0d2;
+  }
+  
+  .browser-top span {
+    background: #f6b8d0;
+  }
+  
+  .icon-blue {
+    background: #ffe2ec;
+    color: #c84f80;
+  }
+  
+  .icon-peach {
+    background: #fff0bd;
+    color: #bd861c;
+  }
+  
+  .icon-purple {
+    background: #f6b8d0;
+    color: #a93f71;
+  }
+  
+  .icon-yellow {
+    background: #ffe69a;
+    color: #9b711c;
+  }
+  
+  .main-button:hover {
+    background: #a83e69;
+  }
+  
+  ::selection {
+    background: #ffe69a;
+    color: #57384b;
+  }
+  

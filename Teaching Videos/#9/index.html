@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Scroll-Driven Animations Demo</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Example 1: Scroll Progress Bar -->
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="logo">scroll<span>studio.</span></div>
+
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#cards">Examples</a>
+      <a href="#ending">Finish</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">TEACHING VIDEO #9</span>
+
+        <h1>
+          Let's make
+          <span>scrolling</span>
+          more fun.
+        </h1>
+
+        <p>
+          Scroll-driven animations let us animate
+          elements based on how far we scroll.
+          And the best part? We can do it with CSS!
+        </p>
+
+        <a class="main-button" href="#about">
+          Let's explore ↓
+        </a>
+      </div>
+
+      <div class="hero-decoration" aria-hidden="true">
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+        <div class="circle circle-three"></div>
+      </div>
+    </section>
+
+    <!-- Explanation Section -->
+    <section class="intro-section" id="about">
+      <div class="section-heading reveal">
+        <span class="eyebrow">THE BASICS</span>
+        <h2>Animations that follow your scroll.</h2>
+
+        <p>
+          Normally, CSS animations run based on time.
+          Scroll-driven animations are different because
+          scrolling controls their progress.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+
+        <article class="comparison-card reveal">
+          <span class="card-number">01</span>
+          <h3>Normal Animation</h3>
+          <p>
+            Uses time to decide how quickly
+            an animation happens.
+          </p>
+          <code>animation-duration: 2s;</code>
+        </article>
+
+        <article class="comparison-card featured reveal">
+          <span class="card-number">02</span>
+          <h3>Scroll Animation</h3>
+          <p>
+            Uses your scroll position instead
+            of a timer.
+          </p>
+          <code>animation-timeline: scroll();</code>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Scroll Timeline Example -->
+    <section class="feature-section blue-section">
+      <div class="feature-content reveal">
+        <span class="eyebrow">EXAMPLE ONE</span>
+
+        <h2>Meet scroll().</h2>
+
+        <p>
+          See that little blue line at the very
+          top of the page?
+        </p>
+
+        <p>
+          That is our reading progress bar!
+          As you scroll down, it fills up.
+          When you scroll back up, it shrinks.
+        </p>
+
+        <div class="code-example">
+          <code>animation-timeline: scroll(root);</code>
+        </div>
+      </div>
+
+      <div class="feature-visual reveal" aria-hidden="true">
+        <div class="browser-window">
+          <div class="browser-top">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="browser-progress"></div>
+
+          <div class="browser-lines">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- View Timeline Example -->
+    <section class="cards-section" id="cards">
+
+      <div class="section-heading reveal">
+        <span class="eyebrow">EXAMPLE TWO</span>
+
+        <h2>Now let's try view().</h2>
+
+        <p>
+          These cards fade in and slide up as
+          they enter your screen. Each one
+          has its own animation!
+        </p>
+      </div>
+
+      <div class="cards-grid">
+
+        <article class="demo-card reveal">
+          <div class="card-icon icon-blue">✦</div>
+          <span class="card-number">01 / SCROLL</span>
+          <h3>Keep scrolling</h3>
+          <p>
+            This card starts animating when
+            it enters the viewport.
+          </p>
+        </article>
+
+        <article class="demo-card reveal">
+          <div class="card-icon icon-peach">✳</div>
+          <span class="card-number">02 / VIEW</span>
+          <h3>Watch me appear</h3>
+          <p>
+            The animation follows this card's
+            position on your screen.
+          </p>
+        </article>
+
+        <article class="demo-card reveal">
+          <div class="card-icon icon-purple">✿</div>
+          <span class="card-number">03 / RANGE</span>
+          <h3>Perfect timing</h3>
+          <p>
+            Animation-range controls when
+            the animation starts and ends.
+          </p>
+        </article>
+
+        <article class="demo-card reveal">
+          <div class="card-icon icon-yellow">✧</div>
+          <span class="card-number">04 / CSS</span>
+          <h3>No JavaScript!</h3>
+          <p>
+            All of these effects are made
+            using CSS animations.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Animation Range Explanation -->
+    <section class="feature-section peach-section">
+
+      <div class="feature-content reveal">
+        <span class="eyebrow">EXAMPLE THREE</span>
+
+        <h2>Control when it happens.</h2>
+
+        <p>
+          We can use animation-range to choose
+          which part of scrolling controls
+          the animation.
+        </p>
+
+        <p>
+          For example, entry means the animation
+          happens while the element is entering
+          the screen.
+        </p>
+
+        <div class="code-example">
+          <code>animation-range: entry 0% entry 60%;</code>
+        </div>
+      </div>
+
+      <div class="range-example reveal">
+        <div class="range-icon">↗</div>
+        <h3>Here I am!</h3>
+        <p>
+          I fade in while entering the screen.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- Final Section -->
+    <section class="ending-section" id="ending">
+
+      <div class="ending-content reveal">
+        <span class="eyebrow">THAT'S A WRAP</span>
+
+        <h2>Pretty cool, right?</h2>
+
+        <p>
+          Scroll-driven animations make websites
+          feel more interactive without needing
+          JavaScript scroll listeners.
+        </p>
+
+        <a href="#" class="main-button">
+          Back to top ↑
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Scroll-Driven Animations | WDD 331R</p>
+    <p>Teaching Video #9</p>
+  </footer>
+
+</body>
+</html>
