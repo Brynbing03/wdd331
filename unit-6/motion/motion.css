@@ -1,0 +1,451 @@
+/* extra colors for the dashboard */
+:root {
+    --status-green: light-dark(#166534, #86efac);
+    --status-bg: light-dark(#dcfce7, #163b26);
+
+    --button-bg: var(--accent-700);
+    --button-hover: var(--accent-800);
+
+    --soft-orange: color-mix(
+        in oklch,
+        var(--color-accent) 15%,
+        var(--color-surface)
+    );
+
+    --card-shadow: light-dark(#3d302b12, #00000030);
+    --hover-shadow: light-dark(#3d302b26, #00000050);
+}
+
+
+/* basic page styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+
+/* navigation */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 5%;
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--header-text);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: color 250ms ease-out;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+}
+
+
+/* contact button */
+nav .nav-cta {
+    background: var(--button-bg);
+    color: var(--color-white);
+    padding: 10px 18px;
+    border-radius: 8px;
+
+    transition:
+        background-color 250ms ease-in-out,
+        transform 250ms ease-out;
+}
+
+nav .nav-cta:hover,
+nav .nav-cta:focus-visible {
+    background: var(--button-hover);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+
+/* dashboard heading */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-text);
+    margin: 0;
+}
+
+.dashboard-header p {
+    color: var(--color-text-muted);
+    margin: 5px 0;
+}
+
+
+/* live status */
+.status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.status-badge {
+    display: inline-block;
+    background: var(--status-bg);
+    color: var(--status-green);
+    padding: 5px 18px;
+    border-radius: 30px;
+    border: 1px solid var(--status-green);
+    font-weight: bold;
+
+    animation-name: live-pulse;
+    animation-duration: 1.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.status-badge::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 7px;
+    background: var(--status-green);
+    border-radius: 50%;
+}
+
+.status-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+
+/* small pulse to show that the status is live */
+@keyframes live-pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.06);
+    }
+}
+
+
+/* action buttons */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* primary button */
+.btn-primary {
+    background: var(--button-bg);
+    color: var(--color-white);
+
+    transition:
+        background-color 300ms ease-out,
+        transform 300ms ease-out,
+        box-shadow 300ms ease-out;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background: var(--button-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px var(--hover-shadow);
+
+    transition-duration: 150ms;
+}
+
+
+/* secondary button */
+.btn-secondary {
+    background: var(--soft-orange);
+    color: var(--color-text);
+    border-color: var(--color-border);
+
+    transition:
+        background-color 250ms ease-in-out,
+        border-color 250ms ease-in-out;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background: color-mix(
+        in oklch,
+        var(--color-accent) 25%,
+        var(--color-surface)
+    );
+
+    border-color: var(--color-accent);
+}
+
+
+/* ghost button */
+.btn-ghost {
+    background: transparent;
+    color: var(--color-primary-dark);
+
+    transition:
+        background-color 200ms ease-out,
+        color 200ms ease-out;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+    background: var(--soft-orange);
+    color: var(--color-text);
+}
+
+
+/* card layout */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 280px), 1fr)
+    );
+    gap: 24px;
+}
+
+.card-grid .card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 24px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 0 3px 8px var(--card-shadow);
+
+    transition:
+        transform 300ms ease-out,
+        box-shadow 300ms ease-out,
+        border-color 300ms ease-out;
+}
+
+
+/* lift the cards a little when hovering */
+.card-grid .card:hover,
+.card-grid .card:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--hover-shadow);
+    border-color: var(--color-accent);
+
+    transition-duration: 180ms;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.card-grid .card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+
+/* status tags on the cards */
+.card-tag {
+    background: var(--status-bg);
+    color: var(--status-green);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.card-tag--active {
+    background: var(--soft-orange);
+    color: var(--color-primary-dark);
+}
+
+.card-tag--pending {
+    background: var(--color-bg);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+}
+
+
+/* links inside the cards */
+.card-grid .card-link {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0;
+    background: transparent;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition:
+        color 200ms ease-out,
+        transform 200ms ease-out;
+}
+
+.card-grid .card-link:hover,
+.card-grid .card-link:focus-visible {
+    background: transparent;
+    color: var(--color-text);
+    transform: translateX(4px);
+    text-decoration: underline;
+}
+
+
+/* keyboard focus */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-primary-dark);
+    outline-offset: 4px;
+}
+
+
+/* choose topic - scroll-driven animations */
+@supports (animation-timeline: view()) {
+
+    .card-grid .card {
+        animation: card-entrance linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 100%;
+    }
+
+    @keyframes card-entrance {
+        from {
+            opacity: 0.4;
+            translate: 0 20px;
+        }
+
+        to {
+            opacity: 1;
+            translate: 0 0;
+        }
+    }
+}
+
+
+/* smaller screens */
+@media (max-width: 600px) {
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    main {
+        padding: 25px 18px 60px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+    }
+
+    .status {
+        align-items: flex-start;
+    }
+}
+
+
+/* reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    nav a,
+    nav .nav-cta,
+    .btn,
+    .card-grid .card,
+    .card-grid .card-link,
+    .status-badge {
+        transition: none;
+        animation: none;
+    }
+
+    nav .nav-cta:hover,
+    nav .nav-cta:focus-visible,
+    .btn-primary:hover,
+    .btn-primary:focus-visible,
+    .card-grid .card:hover,
+    .card-grid .card:focus-within,
+    .card-grid .card-link:hover,
+    .card-grid .card-link:focus-visible {
+        transform: none;
+        transition: none;
+    }
+
+    .card-grid .card {
+        opacity: 1;
+        translate: none;
+    }
+
+    /* keep the live status without the pulse */
+    .status-badge {
+        transform: none;
+        background: var(--status-bg);
+        color: var(--status-green);
+        border: 2px solid var(--status-green);
+    }
+}

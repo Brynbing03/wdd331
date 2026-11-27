@@ -19,6 +19,7 @@ This repository is my portfolio for WDD 331R: Advanced CSS. Each week I add new 
 - [Unit 4 - Container Queries](https://brynbing03.github.io/wdd331/unit-4/advanced/container-demo.html)
 - [Unit 4 - Sticky Layout](https://brynbing03.github.io/wdd331/unit-4/advanced/sticky-demo.html)
 - [Unit 5 - Typography Playground](https://brynbing03.github.io/wdd331/unit-5/index.html)
+- [Unit 6 - Meaningful Motion](unit-6/motion/index.html)
 - [My Resume](https://brynbing03.github.io/wdd331/resume.html)
 - [Contact Me](https://brynbing03.github.io/wdd331/contact.html)
 
